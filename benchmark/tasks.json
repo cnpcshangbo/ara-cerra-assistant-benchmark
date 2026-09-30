@@ -1,0 +1,2599 @@
+{
+  "schemaVersion": "cerra-public-task-review-v1",
+  "artifactType": "privacy-reduced review derivative; not the frozen execution manifest",
+  "sourceManifestSha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77",
+  "sourceProtocolVersion": "cerra-gpt61-sol-extension-v1",
+  "taskCount": 28,
+  "primaryTaskCount": 24,
+  "controlTaskCount": 4,
+  "redactionNotes": [
+    {
+      "caseId": "MD07",
+      "paths": [
+        "context.selectedId",
+        "expected.selectedId",
+        "oracle.requestParams.id"
+      ],
+      "action": "Replace local numeric identifier with stable non-reversible public binding token.",
+      "replacement": "selected-weather-unavailable-01"
+    },
+    {
+      "caseId": "MD07",
+      "paths": [
+        "oracle.evidence.selected"
+      ],
+      "action": "Replace full single-crash payload with binding token and the two graded weather fields only; omit date, coordinates, road/location checks, injury/person details and other record attributes."
+    },
+    {
+      "caseId": "MD07",
+      "paths": [
+        "oracle.evidence.totals",
+        "oracle.evidence.locationTotals",
+        "oracle.evidence.estimateTotals",
+        "oracle.evidence.stateTotals"
+      ],
+      "action": "Omit per-selected-record numeric payload. Original grader also checked these retained private fields; this public derivative is not a complete independent replay oracle for MD07."
+    },
+    {
+      "caseId": "MD07",
+      "paths": [
+        "rationale"
+      ],
+      "action": "Remove the selected record’s date and county; preserve the task-design rationale and weather-source distinction."
+    }
+  ],
+  "cases": [
+    {
+      "id": "MD01",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "How many reports match my current crash selection, including the ones outside the visible map?",
+      "category": "filtered_count_scope",
+      "tags": [
+        "novel_paraphrase",
+        "shared_postprocessor_challenge",
+        "scope_negation"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "summary"
+          ],
+          "scope": "filtered"
+        },
+        "evidenceFilters": {
+          "year": "2022",
+          "county": "Montgomery",
+          "severity": "fsi"
+        }
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "summary",
+          "scope": "filtered",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated",
+          "year": "2022",
+          "county": "Montgomery",
+          "severity": "fsi"
+        },
+        "evidence": {
+          "operation": "summary",
+          "scope": "filtered",
+          "filters": {
+            "year": "2022",
+            "county": "Montgomery",
+            "severity": "fsi",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "totals": {
+            "crashes": 266,
+            "mapped": 266,
+            "fsiCrashes": 266,
+            "fatalPersonRecords": 49,
+            "seriousPersonRecords": 264,
+            "missingInjuryPersonRecords": 0,
+            "ambientUnavailable": 0,
+            "namedWeather": 247,
+            "weatherContributing": 0
+          },
+          "rows": [],
+          "locationTotals": {
+            "flagged": 11,
+            "county": 0,
+            "road": 11,
+            "reuse": 0
+          },
+          "estimateTotals": {
+            "estimated": 0,
+            "ambiguous": 1,
+            "unresolved": 10
+          },
+          "stateTotals": {
+            "originalEligible": 266,
+            "effectiveEligible": 266,
+            "originalRejected": 0,
+            "boundaryReview": 0,
+            "locationUnresolved": 0
+          }
+        }
+      },
+      "rationale": "Filtered scope must ignore viewport. Direct read-only SQL independently verifies 266 crashes, 49 fatal and 264 serious linked person records. Crash count is not the sum of injury records.",
+      "knownApplicationConstraint": "reconcileMarylandPlan at app/mdsp-assistant-data.ts:63 detects the word visible without negation handling and forces viewport, even if the planner returns filtered. If the unchanged application fails, label this a shared postprocessor failure, not a model interpretation failure. A non-negated paired diagnostic prompt is: How many reports match my current selections throughout the dataset?",
+      "benchmarkCaseId": "MD01",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD02",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Across Maryland and all years, how complete is the recorded ambient weather information?",
+      "category": "weather_coverage",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "weather",
+            "breakdown"
+          ],
+          "scope": "all"
+        },
+        "evidenceFilters": {
+          "year": "",
+          "county": "",
+          "severity": ""
+        },
+        "ifBreakdownGroup": "weather",
+        "answerMustConvey": [
+          "2024+ export lacks ambient weather",
+          "Contributor flag is not actual rain/snow/clear conditions",
+          "Missing contributor does not mean clear"
+        ]
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "weather",
+          "scope": "all",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated"
+        },
+        "evidence": {
+          "operation": "weather",
+          "scope": "all",
+          "filters": {
+            "year": "",
+            "county": "",
+            "severity": "",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "totals": {
+            "crashes": 821657,
+            "mapped": 821548,
+            "fsiCrashes": 24128,
+            "fatalPersonRecords": 4330,
+            "seriousPersonRecords": 23915,
+            "missingInjuryPersonRecords": 44614,
+            "ambientUnavailable": 281816,
+            "namedWeather": 484339,
+            "weatherContributing": 11350
+          },
+          "rows": [
+            {
+              "label": "Clear",
+              "crashes": 365149,
+              "fsiCrashes": 11252
+            },
+            {
+              "label": "Unavailable in 2024+ export",
+              "crashes": 281816,
+              "fsiCrashes": 8855
+            },
+            {
+              "label": "Raining",
+              "crashes": 66192,
+              "fsiCrashes": 1322
+            },
+            {
+              "label": "N/A",
+              "crashes": 49477,
+              "fsiCrashes": 1160
+            },
+            {
+              "label": "Cloudy",
+              "crashes": 42012,
+              "fsiCrashes": 1232
+            },
+            {
+              "label": "Unknown",
+              "crashes": 4762,
+              "fsiCrashes": 50
+            },
+            {
+              "label": "Snow",
+              "crashes": 4693,
+              "fsiCrashes": 48
+            },
+            {
+              "label": "Foggy",
+              "crashes": 2864,
+              "fsiCrashes": 90
+            },
+            {
+              "label": "Wintry Mix",
+              "crashes": 1553,
+              "fsiCrashes": 29
+            },
+            {
+              "label": "Other",
+              "crashes": 1262,
+              "fsiCrashes": 31
+            },
+            {
+              "label": "Sleet",
+              "crashes": 877,
+              "fsiCrashes": 22
+            },
+            {
+              "label": "Severe Winds",
+              "crashes": 688,
+              "fsiCrashes": 28
+            },
+            {
+              "label": "Blowing Snow",
+              "crashes": 298,
+              "fsiCrashes": 8
+            },
+            {
+              "label": "Blowing Sand, Soil, Dirt",
+              "crashes": 13,
+              "fsiCrashes": 0
+            },
+            {
+              "label": "Not Reported",
+              "crashes": 1,
+              "fsiCrashes": 1
+            }
+          ],
+          "group": "weather",
+          "locationTotals": {
+            "flagged": 52952,
+            "county": 5436,
+            "road": 50537,
+            "reuse": 5316
+          },
+          "estimateTotals": {
+            "estimated": 4297,
+            "ambiguous": 2669,
+            "unresolved": 45986
+          },
+          "stateTotals": {
+            "originalEligible": 819761,
+            "effectiveEligible": 819923,
+            "originalRejected": 1896,
+            "boundaryReview": 2057,
+            "locationUnresolved": 1734
+          }
+        }
+      },
+      "rationale": "Explicit statewide scope clears the deliberately restrictive UI context. Named-weather count is 484339 of 821657; unavailable ambient weather is 281816, not zero weather-related crashes.",
+      "benchmarkCaseId": "MD02",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD03",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Give me a county-by-county total for 2021 statewide, regardless of severity.",
+      "category": "county_breakdown",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "breakdown"
+          ],
+          "scope": "all"
+        },
+        "evidenceFilters": {
+          "year": "2021",
+          "county": "",
+          "severity": ""
+        },
+        "group": "county",
+        "rowsMustMatchOracle": true
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "breakdown",
+          "scope": "all",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated",
+          "group": "county",
+          "year": "2021"
+        },
+        "evidence": {
+          "operation": "breakdown",
+          "scope": "all",
+          "filters": {
+            "year": "2021",
+            "county": "",
+            "severity": "",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "totals": {
+            "crashes": 108968,
+            "mapped": 108957,
+            "fsiCrashes": 3102,
+            "fatalPersonRecords": 580,
+            "seriousPersonRecords": 3057,
+            "missingInjuryPersonRecords": 0,
+            "ambientUnavailable": 0,
+            "namedWeather": 97748,
+            "weatherContributing": 0
+          },
+          "rows": [
+            {
+              "label": "Baltimore County",
+              "crashes": 20427,
+              "fsiCrashes": 474
+            },
+            {
+              "label": "Prince George's",
+              "crashes": 20008,
+              "fsiCrashes": 481
+            },
+            {
+              "label": "Baltimore City",
+              "crashes": 17942,
+              "fsiCrashes": 514
+            },
+            {
+              "label": "Montgomery",
+              "crashes": 11228,
+              "fsiCrashes": 267
+            },
+            {
+              "label": "Anne Arundel",
+              "crashes": 9484,
+              "fsiCrashes": 261
+            },
+            {
+              "label": "Howard",
+              "crashes": 3634,
+              "fsiCrashes": 142
+            },
+            {
+              "label": "Frederick",
+              "crashes": 3369,
+              "fsiCrashes": 108
+            },
+            {
+              "label": "Harford",
+              "crashes": 3248,
+              "fsiCrashes": 108
+            },
+            {
+              "label": "Charles",
+              "crashes": 2893,
+              "fsiCrashes": 106
+            },
+            {
+              "label": "Washington",
+              "crashes": 2487,
+              "fsiCrashes": 71
+            },
+            {
+              "label": "Wicomico",
+              "crashes": 2147,
+              "fsiCrashes": 65
+            },
+            {
+              "label": "Carroll",
+              "crashes": 1863,
+              "fsiCrashes": 78
+            },
+            {
+              "label": "St. Mary's",
+              "crashes": 1685,
+              "fsiCrashes": 98
+            },
+            {
+              "label": "Cecil",
+              "crashes": 1641,
+              "fsiCrashes": 56
+            },
+            {
+              "label": "Worcester",
+              "crashes": 1461,
+              "fsiCrashes": 45
+            },
+            {
+              "label": "Calvert",
+              "crashes": 1015,
+              "fsiCrashes": 41
+            },
+            {
+              "label": "Talbot",
+              "crashes": 803,
+              "fsiCrashes": 29
+            },
+            {
+              "label": "Allegany",
+              "crashes": 802,
+              "fsiCrashes": 33
+            },
+            {
+              "label": "Queen Anne's",
+              "crashes": 785,
+              "fsiCrashes": 28
+            },
+            {
+              "label": "Dorchester",
+              "crashes": 532,
+              "fsiCrashes": 19
+            },
+            {
+              "label": "Garrett",
+              "crashes": 487,
+              "fsiCrashes": 20
+            },
+            {
+              "label": "Caroline",
+              "crashes": 485,
+              "fsiCrashes": 26
+            },
+            {
+              "label": "Somerset",
+              "crashes": 330,
+              "fsiCrashes": 12
+            },
+            {
+              "label": "Kent",
+              "crashes": 212,
+              "fsiCrashes": 20
+            }
+          ],
+          "group": "county",
+          "locationTotals": {
+            "flagged": 8772,
+            "county": 466,
+            "road": 8346,
+            "reuse": 853
+          },
+          "estimateTotals": {
+            "estimated": 734,
+            "ambiguous": 446,
+            "unresolved": 7592
+          },
+          "stateTotals": {
+            "originalEligible": 108896,
+            "effectiveEligible": 108905,
+            "originalRejected": 72,
+            "boundaryReview": 289,
+            "locationUnresolved": 63
+          }
+        }
+      },
+      "rationale": "Must group all 24 Maryland counties/county equivalents, not retain Montgomery or FSI. Baltimore City and Baltimore County must remain separate.",
+      "benchmarkCaseId": "MD03",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD04",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "For Baltimore County, tabulate report totals for all years and all severity levels.",
+      "category": "year_breakdown_county_distinction",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "breakdown"
+          ],
+          "scope": "filtered"
+        },
+        "evidenceFilters": {
+          "year": "",
+          "county": "Baltimore County",
+          "severity": ""
+        },
+        "group": "year",
+        "rowsMustMatchOracle": true
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "breakdown",
+          "scope": "filtered",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated",
+          "group": "year",
+          "county": "Baltimore County"
+        },
+        "evidence": {
+          "operation": "breakdown",
+          "scope": "filtered",
+          "filters": {
+            "year": "",
+            "county": "Baltimore County",
+            "severity": "",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "totals": {
+            "crashes": 151679,
+            "mapped": 151678,
+            "fsiCrashes": 3541,
+            "fatalPersonRecords": 549,
+            "seriousPersonRecords": 3615,
+            "missingInjuryPersonRecords": 13455,
+            "ambientUnavailable": 50804,
+            "namedWeather": 87891,
+            "weatherContributing": 1753
+          },
+          "rows": [
+            {
+              "label": 2019,
+              "crashes": 21707,
+              "fsiCrashes": 457
+            },
+            {
+              "label": 2022,
+              "crashes": 20623,
+              "fsiCrashes": 466
+            },
+            {
+              "label": 2021,
+              "crashes": 20427,
+              "fsiCrashes": 474
+            },
+            {
+              "label": 2023,
+              "crashes": 20303,
+              "fsiCrashes": 470
+            },
+            {
+              "label": 2024,
+              "crashes": 19833,
+              "fsiCrashes": 497
+            },
+            {
+              "label": 2025,
+              "crashes": 18366,
+              "fsiCrashes": 447
+            },
+            {
+              "label": 2020,
+              "crashes": 17815,
+              "fsiCrashes": 408
+            },
+            {
+              "label": 2026,
+              "crashes": 12605,
+              "fsiCrashes": 322
+            }
+          ],
+          "group": "year",
+          "locationTotals": {
+            "flagged": 12801,
+            "county": 905,
+            "road": 12544,
+            "reuse": 494
+          },
+          "estimateTotals": {
+            "estimated": 969,
+            "ambiguous": 468,
+            "unresolved": 11364
+          },
+          "stateTotals": {
+            "originalEligible": 151258,
+            "effectiveEligible": 151289,
+            "originalRejected": 421,
+            "boundaryReview": 10,
+            "locationUnresolved": 390
+          }
+        }
+      },
+      "rationale": "An explicitly named county overrides the UI county, all years clears 2022, and all severity clears FSI. 2026 is partial through September 16.",
+      "benchmarkCaseId": "MD04",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD05",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "How many 2022 crash reports across Maryland list rain as the ambient weather?",
+      "category": "weather_count",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "summary",
+            "weather"
+          ],
+          "scope": "all"
+        },
+        "evidenceFilters": {
+          "year": "2022",
+          "county": "",
+          "severity": "",
+          "weather": "Raining"
+        }
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "summary",
+          "scope": "all",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated",
+          "year": "2022",
+          "weather": "Raining"
+        },
+        "evidence": {
+          "operation": "summary",
+          "scope": "all",
+          "filters": {
+            "year": "2022",
+            "county": "",
+            "severity": "",
+            "weather": "Raining",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "totals": {
+            "crashes": 14220,
+            "mapped": 14214,
+            "fsiCrashes": 291,
+            "fatalPersonRecords": 50,
+            "seriousPersonRecords": 275,
+            "missingInjuryPersonRecords": 0,
+            "ambientUnavailable": 0,
+            "namedWeather": 14220,
+            "weatherContributing": 0
+          },
+          "rows": [],
+          "locationTotals": {
+            "flagged": 1597,
+            "county": 97,
+            "road": 1543,
+            "reuse": 141
+          },
+          "estimateTotals": {
+            "estimated": 134,
+            "ambiguous": 89,
+            "unresolved": 1374
+          },
+          "stateTotals": {
+            "originalEligible": 14183,
+            "effectiveEligible": 14187,
+            "originalRejected": 37,
+            "boundaryReview": 29,
+            "locationUnresolved": 33
+          }
+        }
+      },
+      "rationale": "Rain is an observed ambient condition from legacy weather data, never a cause or wet-surface proxy.",
+      "benchmarkCaseId": "MD05",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD06",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "What about 2025?",
+      "category": "follow_up_missing_weather",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "summary",
+            "weather"
+          ],
+          "scope": "all"
+        },
+        "evidenceFilters": {
+          "year": "2025",
+          "county": "",
+          "severity": "",
+          "weather": "Raining"
+        },
+        "answerMustConvey": [
+          "Cannot determine rainy-crash count because this year lacks ambient weather"
+        ],
+        "answerMustNotClaim": [
+          "There were zero rainy crashes"
+        ]
+      },
+      "previousQuery": {
+        "operation": "summary",
+        "scope": "all",
+        "year": "2022",
+        "county": "",
+        "severity": "",
+        "weather": "Raining",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated"
+      },
+      "history": [
+        {
+          "role": "user",
+          "content": "How many 2022 crash reports across Maryland list rain as the ambient weather?"
+        },
+        {
+          "role": "assistant",
+          "content": "The previous query counted 2022 reports with recorded ambient rain across Maryland."
+        }
+      ],
+      "oracle": {
+        "requestParams": {
+          "analysis": "summary",
+          "scope": "all",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated",
+          "year": "2025",
+          "weather": "Raining"
+        },
+        "evidence": {
+          "operation": "summary",
+          "scope": "all",
+          "filters": {
+            "year": "2025",
+            "county": "",
+            "severity": "",
+            "weather": "Raining",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "totals": {
+            "crashes": 0,
+            "mapped": 0,
+            "fsiCrashes": 0,
+            "fatalPersonRecords": 0,
+            "seriousPersonRecords": 0,
+            "missingInjuryPersonRecords": 0,
+            "ambientUnavailable": 0,
+            "namedWeather": 0,
+            "weatherContributing": 0
+          },
+          "rows": [],
+          "locationTotals": {
+            "flagged": 0,
+            "county": 0,
+            "road": 0,
+            "reuse": 0
+          },
+          "estimateTotals": {
+            "estimated": 0,
+            "ambiguous": 0,
+            "unresolved": 0
+          },
+          "stateTotals": {
+            "originalEligible": 0,
+            "effectiveEligible": 0,
+            "originalRejected": 0,
+            "boundaryReview": 0,
+            "locationUnresolved": 0
+          }
+        }
+      },
+      "rationale": "Use the persisted previousQuery rather than inventing counts or discarding weather. Database zero label matches is coverage absence, not measured absence of rainy crashes.",
+      "benchmarkCaseId": "MD06",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD07",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "For the selected crash, does an unmarked Weather Conditions contributor establish clear weather?",
+      "category": "selected_current_record",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2022",
+        "county": "Montgomery",
+        "severity": "fsi",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": "selected-weather-unavailable-01"
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "selected"
+          ],
+          "scope": "selected"
+        },
+        "evidenceFilters": {},
+        "selectedId": "selected-weather-unavailable-01",
+        "selectedWeather": {
+          "status": "unavailable",
+          "contributing": 0
+        },
+        "answerMustConvey": [
+          "Actual weather unavailable in 2024+ export",
+          "An absent contributor flag does not establish clear weather"
+        ],
+        "noOriginalReportOrPersonRows": true
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "selected",
+          "scope": "selected",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated",
+          "id": "selected-weather-unavailable-01"
+        },
+        "evidence": {
+          "operation": "selected",
+          "scope": "selected",
+          "filters": {
+            "year": "",
+            "county": "",
+            "severity": "",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": null,
+          "rows": [],
+          "selected": {
+            "id": "selected-weather-unavailable-01",
+            "weather": {
+              "status": "unavailable",
+              "contributing": 0
+            }
+          }
+        }
+      },
+      "rationale": "The selected record is refetched independently of the current Montgomery/FSI filters. Ambient weather is unavailable and contributing=0. Record-level identifying details and other per-record fields are withheld in this public derivative.",
+      "benchmarkCaseId": "MD07",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD08",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "What does the GPS screening show for crashes visible in this view?",
+      "category": "gps_screening",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "",
+        "county": "",
+        "severity": "",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "location"
+          ],
+          "scope": "viewport"
+        },
+        "evidenceFilters": {
+          "year": "",
+          "county": "",
+          "severity": "",
+          "location": ""
+        },
+        "boundsExact": [
+          -76.7,
+          39.2,
+          -76.5,
+          39.4
+        ],
+        "answerMustConvey": [
+          "Checks screen consistency; they do not certify location accuracy",
+          "Categories overlap"
+        ]
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "location",
+          "scope": "viewport",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "estimated"
+        },
+        "evidence": {
+          "operation": "location",
+          "scope": "viewport",
+          "filters": {
+            "year": "",
+            "county": "",
+            "severity": "",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "estimated",
+          "bounds": [
+            -76.7,
+            39.2,
+            -76.5,
+            39.4
+          ],
+          "totals": {
+            "crashes": 169150,
+            "mapped": 169148,
+            "fsiCrashes": 4816,
+            "fatalPersonRecords": 546,
+            "seriousPersonRecords": 4979,
+            "missingInjuryPersonRecords": 13738,
+            "ambientUnavailable": 54951,
+            "namedWeather": 96201,
+            "weatherContributing": 1568
+          },
+          "rows": [
+            {
+              "label": "consistent",
+              "crashes": 104866,
+              "fsiCrashes": 3314
+            },
+            {
+              "label": "inconclusive",
+              "crashes": 52971,
+              "fsiCrashes": 1235
+            },
+            {
+              "label": "review",
+              "crashes": 11313,
+              "fsiCrashes": 267
+            }
+          ],
+          "group": "location checks",
+          "locationTotals": {
+            "flagged": 11313,
+            "county": 1583,
+            "road": 10126,
+            "reuse": 1736
+          },
+          "estimateTotals": {
+            "estimated": 879,
+            "ambiguous": 476,
+            "unresolved": 9958
+          },
+          "comparison": {
+            "original": 169174,
+            "estimated": 169150,
+            "both": 169004,
+            "movedIn": 146,
+            "movedOut": 170,
+            "relocated": 1049,
+            "unresolved": 10434,
+            "originalFsi": 4816,
+            "estimatedFsi": 4816
+          },
+          "stateTotals": {
+            "originalEligible": 169125,
+            "effectiveEligible": 169150,
+            "originalRejected": 25,
+            "boundaryReview": 0,
+            "locationUnresolved": 0
+          }
+        }
+      },
+      "rationale": "Visible scope uses exact viewport and current position mode. Do not restrict to only flagged reports unless requested, or claim GPS flags prove error.",
+      "benchmarkCaseId": "MD08",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD09",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "For the visible map area, compare original and estimated locations and count reports entering or leaving.",
+      "category": "placement_comparison",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "",
+        "county": "",
+        "severity": "",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "planner_with_validation_and_deterministic_answer",
+      "expected": {
+        "httpStatus": 200,
+        "noAction": true,
+        "plan": {
+          "operationAllowed": [
+            "estimates"
+          ],
+          "scope": "viewport"
+        },
+        "evidenceFilters": {
+          "estimate": ""
+        },
+        "placement": "compare",
+        "boundsExact": [
+          -76.7,
+          39.2,
+          -76.5,
+          39.4
+        ],
+        "answerMustConvey": [
+          "Compare counts unique reports once",
+          "Estimates are not independently verified corrections",
+          "No validated or recalculated HIN"
+        ]
+      },
+      "oracle": {
+        "requestParams": {
+          "analysis": "estimates",
+          "scope": "viewport",
+          "bbox": "-76.7,39.2,-76.5,39.4",
+          "placement": "compare"
+        },
+        "evidence": {
+          "operation": "estimates",
+          "scope": "viewport",
+          "filters": {
+            "year": "",
+            "county": "",
+            "severity": "",
+            "weather": "",
+            "location": "",
+            "estimate": ""
+          },
+          "placement": "compare",
+          "bounds": [
+            -76.7,
+            39.2,
+            -76.5,
+            39.4
+          ],
+          "totals": {
+            "crashes": 169320,
+            "mapped": 169318,
+            "fsiCrashes": 4824,
+            "fatalPersonRecords": 546,
+            "seriousPersonRecords": 4988,
+            "missingInjuryPersonRecords": 13738,
+            "ambientUnavailable": 54951,
+            "namedWeather": 96352,
+            "weatherContributing": 1568
+          },
+          "rows": [
+            {
+              "label": "original retained",
+              "crashes": 74910,
+              "fsiCrashes": 2102
+            },
+            {
+              "label": "original retained",
+              "crashes": 54951,
+              "fsiCrashes": 1841
+            },
+            {
+              "label": "original retained",
+              "crashes": 16323,
+              "fsiCrashes": 387
+            },
+            {
+              "label": "original retained",
+              "crashes": 12857,
+              "fsiCrashes": 255
+            },
+            {
+              "label": "original retained",
+              "crashes": 6958,
+              "fsiCrashes": 192
+            },
+            {
+              "label": "original retained",
+              "crashes": 1316,
+              "fsiCrashes": 7
+            },
+            {
+              "label": "original retained",
+              "crashes": 712,
+              "fsiCrashes": 8
+            },
+            {
+              "label": "original retained",
+              "crashes": 378,
+              "fsiCrashes": 9
+            },
+            {
+              "label": "unresolved",
+              "crashes": 357,
+              "fsiCrashes": 13
+            },
+            {
+              "label": "ambiguous",
+              "crashes": 249,
+              "fsiCrashes": 2
+            },
+            {
+              "label": "original retained",
+              "crashes": 143,
+              "fsiCrashes": 3
+            },
+            {
+              "label": "original retained",
+              "crashes": 135,
+              "fsiCrashes": 3
+            },
+            {
+              "label": "original retained",
+              "crashes": 27,
+              "fsiCrashes": 2
+            },
+            {
+              "label": "original retained",
+              "crashes": 4,
+              "fsiCrashes": 0
+            }
+          ],
+          "group": "location estimates",
+          "locationTotals": {
+            "flagged": 11483,
+            "county": 1648,
+            "road": 10295,
+            "reuse": 1788
+          },
+          "estimateTotals": {
+            "estimated": 1049,
+            "ambiguous": 476,
+            "unresolved": 9958
+          },
+          "comparison": {
+            "original": 169174,
+            "estimated": 169150,
+            "both": 169004,
+            "movedIn": 146,
+            "movedOut": 170,
+            "relocated": 1049,
+            "unresolved": 10434,
+            "originalFsi": 4816,
+            "estimatedFsi": 4816
+          },
+          "stateTotals": {
+            "originalEligible": 169295,
+            "effectiveEligible": 169320,
+            "originalRejected": 25,
+            "boundaryReview": 0,
+            "locationUnresolved": 0
+          }
+        }
+      },
+      "rationale": "This is a question, not a map-filter command. Union of eligible endpoints must be counted once; do not set estimate=estimated or count two endpoints as two crashes.",
+      "benchmarkCaseId": "MD09",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD10",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "请筛选 2021 年 Baltimore County 的重伤事故。",
+      "category": "bilingual_filter_action",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2024",
+        "county": "Baltimore City",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "original",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "actionExact": {
+          "type": "set_filters",
+          "filters": {
+            "year": "2021",
+            "county": "Baltimore County",
+            "severity": "serious"
+          }
+        },
+        "evidence": null,
+        "preserveUnspecifiedControls": true,
+        "browserStateMustMatchAction": true
+      },
+      "rationale": "Mandarin action with the exact UI county name. Preserve location=review, estimate=ambiguous and original placement; serious differs from fatal-or-serious.",
+      "benchmarkCaseId": "MD10",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "MD11",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Please limit the map to fatal or serious injury crashes in Anne Arundel during 2022.",
+      "category": "compound_filter_action",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2024",
+        "county": "Baltimore City",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "original",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "actionExact": {
+          "type": "set_filters",
+          "filters": {
+            "year": "2022",
+            "county": "Anne Arundel",
+            "severity": "fsi"
+          }
+        },
+        "evidence": null,
+        "preserveUnspecifiedControls": true,
+        "browserStateMustMatchAction": true
+      },
+      "rationale": "Fatal OR serious is the fsi union. No reset and no clearing of GPS or estimate filters.",
+      "benchmarkCaseId": "MD11",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "MD12",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Remove the year restriction while preserving my other selections.",
+      "category": "partial_filter_clear",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2024",
+        "county": "Baltimore City",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "original",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "actionExact": {
+          "type": "set_filters",
+          "filters": {
+            "year": ""
+          }
+        },
+        "evidence": null,
+        "preserveUnspecifiedControls": true,
+        "browserStateMustMatchAction": true
+      },
+      "rationale": "Single-control clear, not reset. Essential regression when a model emits otherwise valid but unrequested fields.",
+      "benchmarkCaseId": "MD12",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "MD15",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Filter to 2022 fatal crashes during rain.",
+      "category": "unsupported_weather_action",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2024",
+        "county": "Baltimore City",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "original",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "action": null,
+        "evidence": null,
+        "controlsUnchanged": true,
+        "answerMustConvey": [
+          "Weather is queryable but is not a map filter",
+          "No filters changed"
+        ]
+      },
+      "rationale": "The entire compound action must be refused: no partial year/severity application. This path does invoke a model unlike the causal preflight control.",
+      "benchmarkCaseId": "MD15",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "MD17",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Focus the map on Baltimore for 2020.",
+      "category": "ambiguous_geography_action",
+      "tags": [
+        "novel_paraphrase"
+      ],
+      "context": {
+        "year": "2024",
+        "county": "Baltimore City",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "original",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "action": null,
+        "evidence": null,
+        "controlsUnchanged": true,
+        "answerMustConvey": [
+          "Specify Baltimore City or Baltimore County"
+        ]
+      },
+      "rationale": "Ambiguous geography must cause whole-action clarification, without silently choosing City/County or partially applying 2020.",
+      "benchmarkCaseId": "MD17",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "RV01",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Change the study area to Prince George's and show serious-injury crashes; leave year, GPS cross-check, location estimates and map positions as they are.",
+      "category": "compound_change_explicit_preservation",
+      "tags": [
+        "novel_paraphrase",
+        "independent_reviewer_challenge"
+      ],
+      "context": {
+        "year": "2025",
+        "county": "Montgomery",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "compare",
+        "bbox": "-79.6,37.8,-74.8,39.85",
+        "selectedId": null
+      },
+      "history": [],
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "actionExact": {
+          "type": "set_filters",
+          "filters": {
+            "county": "Prince George's",
+            "severity": "serious"
+          }
+        },
+        "evidence": null,
+        "preserveUnspecifiedControls": true,
+        "browserStateMustMatchAction": true
+      },
+      "rationale": "Change exactly county and serious-injury selection; mentioning preserved controls is not permission to include them in the action patch.",
+      "benchmarkCaseId": "RV01",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "RV02",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Clear only the GPS cross-check; keep the unresolved location-estimate filter and comparison map positions.",
+      "category": "single_clear_related_controls_preserved",
+      "tags": [
+        "novel_paraphrase",
+        "independent_reviewer_challenge"
+      ],
+      "context": {
+        "year": "2021",
+        "county": "Howard",
+        "severity": "fsi",
+        "location": "county",
+        "estimate": "unresolved",
+        "placement": "compare",
+        "bbox": "-79.6,37.8,-74.8,39.85",
+        "selectedId": null
+      },
+      "history": [],
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "actionExact": {
+          "type": "set_filters",
+          "filters": {
+            "location": ""
+          }
+        },
+        "evidence": null,
+        "preserveUnspecifiedControls": true,
+        "browserStateMustMatchAction": true
+      },
+      "rationale": "Clear the GPS consistency-screening selection only; preserve the distinct estimate-status and placement controls, and all other filters.",
+      "benchmarkCaseId": "RV02",
+      "split": "primary",
+      "mode": "browser"
+    },
+    {
+      "id": "hin-02-half-mile-fatalities",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "metric_selection",
+        "minimum_length_scale",
+        "people_not_crashes"
+      ],
+      "answer_path": "planner_then_deterministic_answer",
+      "request": {
+        "question": "Using the full dataset, list the three corridors in the half-mile minimum-length set with the largest fatality counts.",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": true,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "half",
+          "rankLimit": 10,
+          "tier": "Major Concern",
+          "intersectionTier": "Tier 2",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": "NORTH"
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "rank",
+        "scope": "dataset",
+        "layer": "ranked",
+        "scale": "half",
+        "metric": "fatal",
+        "limit": 3
+      },
+      "independent_oracle": {
+        "ordered_row_ids": [
+          "rank-half-3",
+          "rank-half-12",
+          "rank-half-18"
+        ],
+        "source_rows": [
+          {
+            "id": "rank-half-3",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_half_mile.geojson",
+            "name": "E NORTH AVE/ W NORTH AVE",
+            "scale": "half",
+            "rank": 3,
+            "fatal": 17,
+            "serious": 117,
+            "fatalAndSerious": 134,
+            "nonMotorist": 258,
+            "weightedScorePerMile": 159.67
+          },
+          {
+            "id": "rank-half-12",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_half_mile.geojson",
+            "name": "BATH ST/ E MULBERRY ST/ PULASKI HWY/ W MULBERRY ST/ ORLEANS ST/ W FRANKLIN ST",
+            "scale": "half",
+            "rank": 12,
+            "fatal": 15,
+            "serious": 145,
+            "fatalAndSerious": 160,
+            "nonMotorist": 195,
+            "weightedScorePerMile": 86.85
+          },
+          {
+            "id": "rank-half-18",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_half_mile.geojson",
+            "name": "REISTERSTOWN RD",
+            "scale": "half",
+            "rank": 18,
+            "fatal": 9,
+            "serious": 47,
+            "fatalAndSerious": 56,
+            "nonMotorist": 121,
+            "weightedScorePerMile": 80.94
+          }
+        ],
+        "source_files": [
+          "top_30_corrdors_half_mile.geojson"
+        ],
+        "metric": "fatal",
+        "ordered_metric_values": [
+          17,
+          15,
+          9
+        ],
+        "candidate_source_records": 30,
+        "calculation": "Read half set, independently sort descending fatal field; tie-break id lexicographically; take 3."
+      },
+      "ambiguities_or_scoring_notes": [
+        "Fatal counts are people, not fatal crashes. Stored source ranks of 3,12,18 must not be substituted for ranking by fatality count. No ties at result boundary."
+      ],
+      "benchmarkCaseId": "HIN02",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-03-intersection-tier-two",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "intersection_tier",
+        "source_rank",
+        "dataset_scope"
+      ],
+      "answer_path": "planner_then_deterministic_answer",
+      "request": {
+        "question": "For the entire dataset, show the first three Tier 2 intersections by source rank.",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "Tier 1",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "rank",
+        "scope": "dataset",
+        "layer": "intersections",
+        "intersectionTier": "Tier 2",
+        "metric_one_of": [
+          "rank",
+          null
+        ],
+        "limit": 3
+      },
+      "independent_oracle": {
+        "ordered_row_ids": [
+          "intersection-101",
+          "intersection-102",
+          "intersection-103"
+        ],
+        "source_rows": [
+          {
+            "id": "intersection-101",
+            "kind": "intersection",
+            "sourceFile": "SS4AData.geodatabase · Top300Intersections",
+            "name": "High-injury intersection #101",
+            "sourceObjectId": 101,
+            "intersectionId": 17315,
+            "clineId": "BC019968",
+            "rank": 101,
+            "tier": "Tier 2",
+            "fatal": 0,
+            "serious": 1,
+            "nonMotorist": 6,
+            "score": 13
+          },
+          {
+            "id": "intersection-102",
+            "kind": "intersection",
+            "sourceFile": "SS4AData.geodatabase · Top300Intersections",
+            "name": "High-injury intersection #102",
+            "sourceObjectId": 102,
+            "intersectionId": 17704,
+            "clineId": "BC027695",
+            "rank": 102,
+            "tier": "Tier 2",
+            "fatal": 1,
+            "serious": 1,
+            "nonMotorist": 1,
+            "score": 13
+          },
+          {
+            "id": "intersection-103",
+            "kind": "intersection",
+            "sourceFile": "SS4AData.geodatabase · Top300Intersections",
+            "name": "High-injury intersection #103",
+            "sourceObjectId": 103,
+            "intersectionId": 19743,
+            "clineId": "BC000128",
+            "rank": 103,
+            "tier": "Tier 2",
+            "fatal": 0,
+            "serious": 3,
+            "nonMotorist": 5,
+            "score": 13
+          }
+        ],
+        "source_files": [
+          "SS4AData.geodatabase · Top300Intersections"
+        ],
+        "metric": "rank",
+        "ordered_metric_values": [
+          101,
+          102,
+          103
+        ],
+        "candidate_source_records": 100,
+        "calculation": "Filter raw intersection tier == Tier 2, then stored rank ascending."
+      },
+      "ambiguities_or_scoring_notes": [
+        "All 3 scores equal 13. Correct source-rank order is 101,102,103; do not invent cross-street names. Current Tier 1 map filter is irrelevant."
+      ],
+      "benchmarkCaseId": "HIN03",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-05-tract-context",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "tract_metric",
+        "missing_values",
+        "aggregate_not_individual"
+      ],
+      "answer_path": "planner_then_deterministic_answer",
+      "request": {
+        "question": "From all census tracts, give the top four by the percentage of households without a vehicle. Exclude unavailable values.",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "all",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "rank",
+        "scope": "dataset",
+        "layer": "tracts",
+        "metric": "zeroVehicleHouseholdsPct",
+        "limit": 4
+      },
+      "independent_oracle": {
+        "ordered_row_ids": [
+          "tract-24510100200",
+          "tract-24510280500",
+          "tract-24510160300",
+          "tract-24510170200"
+        ],
+        "source_rows": [
+          {
+            "id": "tract-24510100200",
+            "kind": "tract",
+            "sourceFile": "SS4AData.geodatabase · CensusTractLevelData + U.S. Census TIGER/Line 2020 geometry",
+            "name": "Census Tract 1002",
+            "sourceObjectId": 128,
+            "geoid": "24510100200",
+            "totalPopulation": 2715,
+            "medianIncome": 22529,
+            "zeroVehicleHouseholdsPct": 85.07,
+            "micromobilityMiles": 23.386927839184864,
+            "pedestrianActivityLevel": 296,
+            "busStops": 15,
+            "trafficSignals": 4,
+            "schools": 0,
+            "hospitals": 0
+          },
+          {
+            "id": "tract-24510280500",
+            "kind": "tract",
+            "sourceFile": "SS4AData.geodatabase · CensusTractLevelData + U.S. Census TIGER/Line 2020 geometry",
+            "name": "Census Tract 2805",
+            "sourceObjectId": 6,
+            "geoid": "24510280500",
+            "totalPopulation": 2620,
+            "medianIncome": 13036,
+            "zeroVehicleHouseholdsPct": 78.32,
+            "micromobilityMiles": 64.26189133117911,
+            "pedestrianActivityLevel": 1019,
+            "busStops": 25,
+            "trafficSignals": 18,
+            "schools": 5,
+            "hospitals": 0
+          },
+          {
+            "id": "tract-24510160300",
+            "kind": "tract",
+            "sourceFile": "SS4AData.geodatabase · CensusTractLevelData + U.S. Census TIGER/Line 2020 geometry",
+            "name": "Census Tract 1603",
+            "sourceObjectId": 107,
+            "geoid": "24510160300",
+            "totalPopulation": 1695,
+            "medianIncome": 21943,
+            "zeroVehicleHouseholdsPct": 76.01,
+            "micromobilityMiles": 8.983552143302553,
+            "pedestrianActivityLevel": 150,
+            "busStops": 5,
+            "trafficSignals": 5,
+            "schools": 0,
+            "hospitals": 0
+          },
+          {
+            "id": "tract-24510170200",
+            "kind": "tract",
+            "sourceFile": "SS4AData.geodatabase · CensusTractLevelData + U.S. Census TIGER/Line 2020 geometry",
+            "name": "Census Tract 1702",
+            "sourceObjectId": 163,
+            "geoid": "24510170200",
+            "totalPopulation": 2457,
+            "medianIncome": 14192,
+            "zeroVehicleHouseholdsPct": 73.15,
+            "micromobilityMiles": 31.382221269494266,
+            "pedestrianActivityLevel": 664,
+            "busStops": 21,
+            "trafficSignals": 20,
+            "schools": 4,
+            "hospitals": 0
+          }
+        ],
+        "source_files": [
+          "SS4AData.geodatabase · CensusTractLevelData + U.S. Census TIGER/Line 2020 geometry"
+        ],
+        "metric": "zeroVehicleHouseholdsPct",
+        "ordered_metric_values": [
+          85.07,
+          78.32,
+          76.01,
+          73.15
+        ],
+        "candidate_source_records": 199,
+        "available_metric_records": 198,
+        "excluded_null_ids": [
+          "tract-24510100300"
+        ],
+        "calculation": "Exclude literal null zeroVehicleHouseholdsPct; descending numeric sort over remaining 198 of 199 rows."
+      },
+      "ambiguities_or_scoring_notes": [
+        "Novel paraphrase of a displayed UI example. Household percentage must not become population percentage, and null must not be treated as zero."
+      ],
+      "benchmarkCaseId": "HIN05",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-06-chinese-global-count",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "chinese",
+        "dataset_scope_override",
+        "source_record_count"
+      ],
+      "answer_path": "planner_then_deterministic_answer",
+      "request": {
+        "question": "忽略当前地图筛选，整个数据集中有多少 Major Concern 的严重伤亡源记录？",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": true,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "half",
+          "rankLimit": 10,
+          "tier": "Major Concern",
+          "intersectionTier": "Tier 2",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": "NORTH"
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "count",
+        "scope": "dataset",
+        "layer": "fsi",
+        "tier": "Major Concern"
+      },
+      "independent_oracle": {
+        "expected_record_count": 309,
+        "expected_tier_distribution": {
+          "Major Concern": 309
+        },
+        "expected_row_ids": [],
+        "source_files": [
+          "segment_of_concern_fatality_severe_injury.geojson"
+        ],
+        "calculation": "Count raw FSI rows whose stored tier exactly equals Major Concern: 309. Do not sum fatalAndSerious. Do not restrict street to NORTH (which would give 33).",
+        "answer_semantic_requirements": [
+          "Chinese explanation",
+          "309 source records, not 309 people/crashes or unique road segments",
+          "Dataset scope independent of current map filters"
+        ]
+      },
+      "ambiguities_or_scoring_notes": [],
+      "benchmarkCaseId": "HIN06",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-10-bilingual-followup",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "followup_context",
+        "cross_language",
+        "scale_change",
+        "quantity"
+      ],
+      "answer_path": "planner_then_deterministic_answer",
+      "request": {
+        "question": "那换成两英里的最低长度组，仍然给前三条。",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "all",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": [
+          {
+            "role": "user",
+            "content": "Across the full dataset, list the three best-ranked corridors in the one-mile minimum-length set."
+          },
+          {
+            "role": "assistant",
+            "content": "The source ranks are 1 PENNSYLVANIA AVE, 2 E NORTH AVE/ W NORTH AVE, and 3 N MARTIN LUTHER KING JR BLVD. These are the one-mile minimum-length set; each set is ranked independently."
+          }
+        ]
+      },
+      "expected_plan_constraints": {
+        "operation": "rank",
+        "scope": "dataset",
+        "layer": "ranked",
+        "scale": "two",
+        "metric_one_of": [
+          "rank",
+          null
+        ],
+        "limit": 3
+      },
+      "independent_oracle": {
+        "ordered_row_ids": [
+          "rank-two-1",
+          "rank-two-2",
+          "rank-two-3"
+        ],
+        "source_rows": [
+          {
+            "id": "rank-two-1",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_two_mile.geojson",
+            "name": "E NORTH AVE/ W NORTH AVE",
+            "scale": "two",
+            "rank": 1,
+            "fatal": 17,
+            "serious": 117,
+            "fatalAndSerious": 134,
+            "nonMotorist": 258,
+            "weightedScorePerMile": 159.67
+          },
+          {
+            "id": "rank-two-2",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_two_mile.geojson",
+            "name": "E PRATT ST/ W PRATT ST",
+            "scale": "two",
+            "rank": 2,
+            "fatal": 3,
+            "serious": 31,
+            "fatalAndSerious": 34,
+            "nonMotorist": 137,
+            "weightedScorePerMile": 91.63
+          },
+          {
+            "id": "rank-two-3",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_two_mile.geojson",
+            "name": "BATH ST/ E MULBERRY ST/ PULASKI HWY/ W MULBERRY ST/ ORLEANS ST/ W FRANKLIN ST",
+            "scale": "two",
+            "rank": 3,
+            "fatal": 15,
+            "serious": 145,
+            "fatalAndSerious": 160,
+            "nonMotorist": 195,
+            "weightedScorePerMile": 86.85
+          }
+        ],
+        "source_files": [
+          "top_30_corrdors_two_mile.geojson"
+        ],
+        "metric": "rank",
+        "ordered_metric_values": [
+          1,
+          2,
+          3
+        ],
+        "candidate_source_records": 30,
+        "calculation": "Use subject=source-ranked corridors from fixed prior user turn, then explicit current two-mile scale and three-result quantity. Independently read two array and rank ascending.",
+        "answer_semantic_requirements": [
+          "Chinese explanation",
+          "3 source corridors, not 2 results",
+          "Two-mile is a minimum-length set, not measured length"
+        ]
+      },
+      "ambiguities_or_scoring_notes": [
+        "Fixed canonical seed conversation makes each model face identical context; do not feed one model another model's response. An optional fully chained first turn can be measured separately."
+      ],
+      "benchmarkCaseId": "HIN10",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-12-source-conflicts",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "source_provenance",
+        "uncertainty",
+        "version_awareness"
+      ],
+      "answer_path": "planner_then_generated_narrative",
+      "request": {
+        "question": "Does the report settle whether intersections use a 150-foot or a 250-foot influence distance, and are the public intersection rankings identical to the database version shown here?",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "all",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation_one_of": [
+          "methodology",
+          "unsupported"
+        ]
+      },
+      "independent_oracle": {
+        "expected_row_ids": [],
+        "required_propositions": [
+          {
+            "id": "distance_conflict",
+            "claim": "The report contains conflicting 150-foot and 250-foot influence-distance descriptions; this dashboard does not resolve which is correct",
+            "source": "app/assistant-data.ts:dataNotes[8]",
+            "critical": true
+          },
+          {
+            "id": "version_preserved",
+            "claim": "Database and public intersection rankings differ; the dashboard retains the supplied database Top 300 version",
+            "source": "app/assistant-data.ts:dataNotes[3,8]",
+            "critical": true
+          }
+        ],
+        "forbidden_claims": [
+          "150 feet definitively correct",
+          "250 feet definitively correct",
+          "Database/public ranks identical",
+          "Assistant claims it resolved source discrepancy"
+        ],
+        "supporting_audit_not_passed_to_model": {
+          "localRecords": 300,
+          "publicRecords": 300,
+          "sharedIntersectionIds": 289,
+          "localOnlyIntersectionIds": 11,
+          "publicOnlyIntersectionIds": 11,
+          "sharedIdsWithDifferentRank": 279,
+          "sharedIdsCrossingTierBoundary": 12,
+          "sharedIdsWithDifferentScore": 10,
+          "sharedIdsWithDifferentFatalCount": 1,
+          "sharedIdsWithDifferentSeriousCount": 7,
+          "sharedIdsWithDifferentNonMotoristCount": 10,
+          "sharedGeometryDistanceMeters": {
+            "minimum": 0.841,
+            "maximum": 0.962,
+            "mean": 0.903
+          }
+        },
+        "calculation": "Semantic review against source caveat plus independent audit confirms only 289 intersection IDs shared, 279 shared IDs have different rank, 12 cross tier boundaries. Do not require these audit numbers in the answer: they are not present in the assistant evidence context."
+      },
+      "ambiguities_or_scoring_notes": [
+        "Allow methodology or unsupported because the question explicitly asks whether ambiguity is settled. Do not grade either valid operation as a failure; require accurate substantive answer."
+      ],
+      "benchmarkCaseId": "HIN12",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-13-current-risk-refusal",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "unsupported_request",
+        "exposure_adjustment",
+        "future_risk"
+      ],
+      "answer_path": "planner_then_generated_narrative",
+      "request": {
+        "question": "Which corridor has the highest probability of a fatal crash next month per vehicle-mile, and what is that probability?",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "all",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "unsupported"
+      },
+      "independent_oracle": {
+        "expected_row_ids": [],
+        "expected_status": "The requested conclusion cannot be calculated from the available dashboard fields.",
+        "required_propositions": [
+          {
+            "id": "cannot_estimate",
+            "claim": "Cannot estimate next-month exposure-adjusted fatal crash probability from historical screening summaries",
+            "critical": true
+          },
+          {
+            "id": "missing_basis",
+            "claim": "Vehicle-mile exposure and an appropriate validated predictive model/current information would be needed",
+            "critical": true
+          }
+        ],
+        "forbidden_claims": [
+          "Numerical crash probability",
+          "A ranked road identified as having highest current/exposure-adjusted risk",
+          "HIN source rank substituted as calibrated probability"
+        ],
+        "calculation": "Inspect dataset schema: no vehicle-mile exposure, future outcomes or model probabilities exist. Full semantic refusal required, not just any occurrence of cannot. A safe additional-data explanation is acceptable."
+      },
+      "ambiguities_or_scoring_notes": [],
+      "benchmarkCaseId": "HIN13",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "hin-14-treatment-causality-refusal",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "novel_paraphrase",
+      "capabilities": [
+        "unsupported_request",
+        "countermeasure_effect",
+        "causal_caution"
+      ],
+      "answer_path": "planner_then_generated_narrative",
+      "request": {
+        "question": "If Baltimore installs a road diet on North Ave, by what percentage will fatal and serious injuries fall according to this dashboard?",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "all",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "unsupported"
+      },
+      "independent_oracle": {
+        "expected_row_ids": [],
+        "expected_status": "The requested conclusion cannot be calculated from the available dashboard fields.",
+        "required_propositions": [
+          {
+            "id": "cannot_causal_effect",
+            "claim": "Dashboard historical HIN screening ranks cannot estimate a road diet's causal injury-reduction percentage",
+            "critical": true
+          },
+          {
+            "id": "missing_evaluation",
+            "claim": "A treatment evaluation or intervention-specific before/after evidence with a credible comparison design is needed",
+            "critical": false
+          }
+        ],
+        "forbidden_claims": [
+          "Any numeric treatment-effect percentage asserted from dashboard",
+          "Recommendation justified as proven effective solely by rank",
+          "A high HIN score proves a particular crash cause"
+        ],
+        "calculation": "Source dataset has no intervention assignment, treated/control outcomes, cost or treatment-effect fields. Judge substantive refusal and absence of unsupported causal assertions; do not require a particular missing-data phrase."
+      },
+      "ambiguities_or_scoring_notes": [
+        "Novel wording of a known unsupported category; label this category as covered by planner rules, not an unseen scientific task."
+      ],
+      "benchmarkCaseId": "HIN14",
+      "split": "primary",
+      "mode": "api"
+    },
+    {
+      "id": "MD16",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Can these data establish that rain causes more fatal crashes per mile?",
+      "category": "unsupported_causal_risk",
+      "tags": [
+        "novel_paraphrase",
+        "system_control_exclude_model_leaderboard"
+      ],
+      "context": {
+        "year": "",
+        "county": "",
+        "severity": "",
+        "location": "",
+        "estimate": "",
+        "placement": "estimated",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "deterministic_preflight_no_model",
+      "expected": {
+        "httpStatus": 200,
+        "plan": {
+          "operationAllowed": [
+            "unsupported"
+          ]
+        },
+        "evidence": null,
+        "noAction": true,
+        "answerMustConvey": [
+          "Cannot infer causes or exposure-adjusted risk"
+        ]
+      },
+      "rationale": "Regex preflight intercepts causes/per-mile. A pass supports application guardrails but provides no evidence of one model outperforming another.",
+      "benchmarkCaseId": "MD16",
+      "split": "control",
+      "mode": "browser"
+    },
+    {
+      "id": "MD18",
+      "module": "maryland",
+      "endpoint": "/api/mdsp-assistant",
+      "prompt": "Show fatal crashes in Baltimore City in 2023",
+      "category": "seen_ui_action_example",
+      "tags": [
+        "seen_ui_example",
+        "seen_system_prompt_example",
+        "report_separately_from_novel"
+      ],
+      "context": {
+        "year": "2024",
+        "county": "Baltimore City",
+        "severity": "property",
+        "location": "review",
+        "estimate": "ambiguous",
+        "placement": "original",
+        "bbox": "-76.7,39.2,-76.5,39.4",
+        "selectedId": null
+      },
+      "path": "action_planner_with_validation",
+      "expected": {
+        "httpStatus": 200,
+        "actionExact": {
+          "type": "set_filters",
+          "filters": {
+            "year": "2023",
+            "county": "Baltimore City",
+            "severity": "fatal"
+          }
+        },
+        "evidence": null,
+        "preserveUnspecifiedControls": true,
+        "browserStateMustMatchAction": true
+      },
+      "rationale": "This is both a visible webpage example and a few-shot planner example. Report as an end-to-end regression check, not held-out language generalization.",
+      "benchmarkCaseId": "MD18",
+      "split": "control",
+      "mode": "browser"
+    },
+    {
+      "id": "hin-01-ui-one-mile-rank",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "shown_ui_example",
+      "capabilities": [
+        "source_ranking",
+        "minimum_length_scale",
+        "result_count"
+      ],
+      "answer_path": "planner_then_deterministic_answer",
+      "request": {
+        "question": "Which five one-mile corridors rank highest?",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": true,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "half",
+          "rankLimit": 10,
+          "tier": "Major Concern",
+          "intersectionTier": "Tier 2",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": "NORTH"
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "rank",
+        "scope": "dataset",
+        "layer": "ranked",
+        "scale": "one",
+        "limit": 5,
+        "metric_one_of": [
+          "rank",
+          null
+        ]
+      },
+      "independent_oracle": {
+        "ordered_row_ids": [
+          "rank-one-1",
+          "rank-one-2",
+          "rank-one-3",
+          "rank-one-4",
+          "rank-one-5"
+        ],
+        "source_rows": [
+          {
+            "id": "rank-one-1",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_one_mile.geojson",
+            "name": "PENNSYLVANIA AVE",
+            "scale": "one",
+            "rank": 1,
+            "fatal": 6,
+            "serious": 39,
+            "fatalAndSerious": 45,
+            "nonMotorist": 113,
+            "weightedScorePerMile": 186.07
+          },
+          {
+            "id": "rank-one-2",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_one_mile.geojson",
+            "name": "E NORTH AVE/ W NORTH AVE",
+            "scale": "one",
+            "rank": 2,
+            "fatal": 17,
+            "serious": 117,
+            "fatalAndSerious": 134,
+            "nonMotorist": 258,
+            "weightedScorePerMile": 159.67
+          },
+          {
+            "id": "rank-one-3",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_one_mile.geojson",
+            "name": "N MARTIN LUTHER KING JR BLVD",
+            "scale": "one",
+            "rank": 3,
+            "fatal": 3,
+            "serious": 27,
+            "fatalAndSerious": 30,
+            "nonMotorist": 41,
+            "weightedScorePerMile": 135.11
+          },
+          {
+            "id": "rank-one-4",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_one_mile.geojson",
+            "name": "S MONROE ST",
+            "scale": "one",
+            "rank": 4,
+            "fatal": 5,
+            "serious": 22,
+            "fatalAndSerious": 27,
+            "nonMotorist": 28,
+            "weightedScorePerMile": 100.59
+          },
+          {
+            "id": "rank-one-5",
+            "kind": "ranked",
+            "sourceFile": "top_30_corrdors_one_mile.geojson",
+            "name": "E PRATT ST/ W PRATT ST",
+            "scale": "one",
+            "rank": 5,
+            "fatal": 3,
+            "serious": 31,
+            "fatalAndSerious": 34,
+            "nonMotorist": 137,
+            "weightedScorePerMile": 91.63
+          }
+        ],
+        "source_files": [
+          "top_30_corrdors_one_mile.geojson"
+        ],
+        "metric": "rank",
+        "ordered_metric_values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "candidate_source_records": 30,
+        "calculation": "Read app/hin-ranked-corridors.json[one]; sort ascending by stored rank; take 5. Do not calculate ranks from score or conflate one-mile with one result."
+      },
+      "ambiguities_or_scoring_notes": [
+        "This exact sentence is both a UI example and planner few-shot: report it as exposed, not held-out generalization. The deliberately incompatible visible half-mile/NORTH filters must not affect this general dataset question."
+      ],
+      "benchmarkCaseId": "HIN01",
+      "split": "control",
+      "mode": "api"
+    },
+    {
+      "id": "hin-11-scoring-method",
+      "module": "baltimore_hin",
+      "endpoint": "/api/assistant",
+      "ui_url": "https://cerra.cloud/dashboard",
+      "prompt_exposure": "shown_ui_example",
+      "capabilities": [
+        "methodology",
+        "formula_explanation",
+        "units"
+      ],
+      "answer_path": "planner_then_generated_narrative",
+      "request": {
+        "question": "How is the HIN score calculated?",
+        "view": {
+          "layers": {
+            "ranked": true,
+            "intersections": true,
+            "fsi": false,
+            "nonMotorist": false,
+            "tracts": false
+          },
+          "scale": "one",
+          "rankLimit": 10,
+          "tier": "all",
+          "intersectionTier": "all",
+          "tractMetric": "pedestrianActivityLevel",
+          "streetQuery": ""
+        },
+        "history": []
+      },
+      "expected_plan_constraints": {
+        "operation": "methodology"
+      },
+      "independent_oracle": {
+        "expected_row_ids": [],
+        "required_propositions": [
+          {
+            "id": "formula",
+            "claim": "HIN score = serious injuries + 2 × non-motorist crashes + 10 × fatalities",
+            "source": "app/assistant-data.ts:dataNotes[1]",
+            "critical": true
+          },
+          {
+            "id": "units",
+            "claim": "Injury/fatality values count people; non-motorist values count crashes",
+            "source": "app/assistant-data.ts:dataNotes[1]",
+            "critical": true
+          },
+          {
+            "id": "normalization",
+            "claim": "Corridors rank by HIN score per mile independently within each minimum-length set; intersections have recorded HIN score",
+            "source": "app/assistant-data.ts:dataNotes[2] and raw intersection score fields",
+            "critical": false
+          }
+        ],
+        "forbidden_claims": [
+          "Fatalities are weighted by 2 or non-motorist crashes by 10",
+          "The HIN score is an exposure-adjusted current crash probability",
+          "2019–2023 scoring indicates a causal treatment benefit"
+        ],
+        "calculation": "Human semantic review against documented formula and independently calculated intersection-1 score 68. Accept algebraically equivalent formula, not bare presence of numerals or keywords."
+      },
+      "ambiguities_or_scoring_notes": [
+        "Exact UI example. Score core formula + units as required; normalization is secondary because the prompt does not explicitly request corridor ranking details."
+      ],
+      "benchmarkCaseId": "HIN11",
+      "split": "control",
+      "mode": "api"
+    }
+  ]
+}

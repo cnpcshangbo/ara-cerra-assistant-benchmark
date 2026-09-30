@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "cerra-public-task-derivative-provenance-v1",
+  "sourceManifestSha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77",
+  "publicFile": "benchmark/tasks.json",
+  "publicFileSha256": "1e6943d660258f63ee2e2622b73618feb1567d544b03b52ddf13b50c2dcad451",
+  "unchangedCaseObjects": 27,
+  "redactedCaseObjects": [
+    "MD07"
+  ],
+  "allOriginalQuestionStringsUnchanged": true,
+  "redactions": [
+    {
+      "caseId": "MD07",
+      "paths": [
+        "context.selectedId",
+        "expected.selectedId",
+        "oracle.requestParams.id"
+      ],
+      "action": "Replace local numeric identifier with stable non-reversible public binding token.",
+      "replacement": "selected-weather-unavailable-01"
+    },
+    {
+      "caseId": "MD07",
+      "paths": [
+        "oracle.evidence.selected"
+      ],
+      "action": "Replace full single-crash payload with binding token and the two graded weather fields only; omit date, coordinates, road/location checks, injury/person details and other record attributes."
+    },
+    {
+      "caseId": "MD07",
+      "paths": [
+        "oracle.evidence.totals",
+        "oracle.evidence.locationTotals",
+        "oracle.evidence.estimateTotals",
+        "oracle.evidence.stateTotals"
+      ],
+      "action": "Omit per-selected-record numeric payload. Original grader also checked these retained private fields; this public derivative is not a complete independent replay oracle for MD07."
+    },
+    {
+      "caseId": "MD07",
+      "paths": [
+        "rationale"
+      ],
+      "action": "Remove the selected record’s date and county; preserve the task-design rationale and weather-source distinction."
+    }
+  ],
+  "sourceManifestNotDistributed": "The original manifest contains record-level selected-crash details and local execution configuration. Its hash identifies the retained private artifact; it is not the public derivative hash.",
+  "exactReplayLimitation": "MD07 requires the retained source snapshot and an authorized private mapping for the selected-record token. Other tasks also require the application and frozen datasets for live inference replay. Public grader and aggregate reproduction are different capabilities."
+}

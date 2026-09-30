@@ -1,0 +1,254 @@
+{
+  "MD01": {
+    "originalQuestion": "How many reports match my current crash selection, including the ones outside the visible map?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Filtered scope must ignore viewport. Direct read-only SQL independently verifies 266 crashes, 49 fatal and 264 serious linked person records. Crash count is not the sum of injury records.",
+    "reviewFlag": "The frozen application has a confirmed scope-reconciliation defect: its visible-keyword branch does not handle “outside the visible map.” It can overwrite a correct filtered plan. Review this as a system task; raw pre-reconciliation plans were not retained, so individual model interpretation cannot be reconstructed. A proposed future diagnostic must be a new task/version.",
+    "actualEvaluationMode": "api"
+  },
+  "MD02": {
+    "originalQuestion": "Across Maryland and all years, how complete is the recorded ambient weather information?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Explicit statewide scope clears the deliberately restrictive UI context. Named-weather count is 484339 of 821657; unavailable ambient weather is 281816, not zero weather-related crashes.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "api"
+  },
+  "MD03": {
+    "originalQuestion": "Give me a county-by-county total for 2021 statewide, regardless of severity.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Must group all 24 Maryland counties/county equivalents, not retain Montgomery or FSI. Baltimore City and Baltimore County must remain separate.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "api"
+  },
+  "MD04": {
+    "originalQuestion": "For Baltimore County, tabulate report totals for all years and all severity levels.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "An explicitly named county overrides the UI county, all years clears 2022, and all severity clears FSI. 2026 is partial through September 16.",
+    "reviewFlag": "Priority ambiguity: “tabulate report totals for all years” does not explicitly demand one row per year, but the frozen key requires a year breakdown. The correct all-years total alone is insufficient under the historical strict rubric. Review whether a revised prompt should say “one row per year”; do not silently rescore the historical data.",
+    "actualEvaluationMode": "api"
+  },
+  "MD05": {
+    "originalQuestion": "How many 2022 crash reports across Maryland list rain as the ambient weather?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Rain is an observed ambient condition from legacy weather data, never a cause or wet-surface proxy.",
+    "reviewFlag": "Strict contract allows summary or weather, not breakdown. Correct rain-filtered values through breakdown can receive the narrowly defined functional-equivalence diagnostic if operation labels are the only failures. Ask whether this implementation contract matches the scientific construct.",
+    "actualEvaluationMode": "api"
+  },
+  "MD06": {
+    "originalQuestion": "What about 2025?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Use the persisted previousQuery rather than inventing counts or discarding weather. Database zero label matches is coverage absence, not measured absence of rainy crashes.",
+    "reviewFlag": "The canonical history and previousQuery are fixed inputs, not prior trial outputs. A zero matching-row result for unavailable weather fields must not be asserted as zero rainy crashes. The MD05 operation-only sensitivity also applies here.",
+    "actualEvaluationMode": "api"
+  },
+  "MD07": {
+    "originalQuestion": "For the selected crash, does an unmarked Weather Conditions contributor establish clear weather?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "The selected record is refetched independently of the current Montgomery/FSI filters. Ambient weather is unavailable and contributing=0. Record-level identifying details and other per-record fields are withheld in this public derivative.",
+    "reviewFlag": "Privacy reduction: the selected record uses a public binding token; its local numeric ID, date, precise coordinates and other record-level payload are omitted. Weather status and contributor checks remain visible. Exact live replay needs an authorized private binding; no replacement synthetic record is represented as the historical source.",
+    "actualEvaluationMode": "api"
+  },
+  "MD08": {
+    "originalQuestion": "What does the GPS screening show for crashes visible in this view?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Visible scope uses exact viewport and current position mode. Do not restrict to only flagged reports unless requested, or claim GPS flags prove error.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "api"
+  },
+  "MD09": {
+    "originalQuestion": "For the visible map area, compare original and estimated locations and count reports entering or leaving.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "This is a question, not a map-filter command. Union of eligible endpoints must be counted once; do not set estimate=estimated or count two endpoints as two crashes.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "api"
+  },
+  "MD10": {
+    "originalQuestion": "请筛选 2021 年 Baltimore County 的重伤事故。",
+    "englishTranslation": "Please filter to serious-injury crashes in Baltimore County in 2021.",
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Mandarin action with the exact UI county name. Preserve location=review, estimate=ambiguous and original placement; serious differs from fatal-or-serious.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "browser"
+  },
+  "MD11": {
+    "originalQuestion": "Please limit the map to fatal or serious injury crashes in Anne Arundel during 2022.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Fatal OR serious is the fsi union. No reset and no clearing of GPS or estimate filters.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "browser"
+  },
+  "MD12": {
+    "originalQuestion": "Remove the year restriction while preserving my other selections.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Single-control clear, not reset. Essential regression when a model emits otherwise valid but unrequested fields.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "browser"
+  },
+  "MD15": {
+    "originalQuestion": "Filter to 2022 fatal crashes during rain.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "The entire compound action must be refused: no partial year/severity application. This path does invoke a model unlike the causal preflight control.",
+    "reviewFlag": "Frozen policy refuses the entire compound action because weather is queryable but is not an available map filter. Partial year/severity updates fail. Functional sensitivity relaxes only one explanation check when the entire action is refused and every other strict check passes.",
+    "actualEvaluationMode": "browser"
+  },
+  "MD17": {
+    "originalQuestion": "Focus the map on Baltimore for 2020.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Ambiguous geography must cause whole-action clarification, without silently choosing City/County or partially applying 2020.",
+    "reviewFlag": "The year 2020 is explicitly requested. Changing it before resolving Baltimore City versus County violates the frozen clarify-first/preserve-state policy; this must not be described as an unrequested year or as demonstrated user harm. Ask whether the policy should be explicit to the user and whether another interaction policy merits a separate task.",
+    "actualEvaluationMode": "browser"
+  },
+  "RV01": {
+    "originalQuestion": "Change the study area to Prince George's and show serious-injury crashes; leave year, GPS cross-check, location estimates and map positions as they are.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Change exactly county and serious-injury selection; mentioning preserved controls is not permission to include them in the action patch.",
+    "reviewFlag": "The user names controls to preserve. Under exact-patch scoring, including redundant fields can fail even if they do not visibly change. County changes may legitimately refit map bounds; the global exact-bounds check is not applied to a county patch.",
+    "actualEvaluationMode": "browser"
+  },
+  "RV02": {
+    "originalQuestion": "Clear only the GPS cross-check; keep the unresolved location-estimate filter and comparison map positions.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Clear the GPS consistency-screening selection only; preserve the distinct estimate-status and placement controls, and all other filters.",
+    "reviewFlag": "Exact-patch scoring rejects redundant preserved estimate/placement fields. The functional diagnostic may accept exactly those redundant fields if all actual controls, URL, bounds and data-query checks pass.",
+    "actualEvaluationMode": "browser"
+  },
+  "HIN02": {
+    "originalQuestion": "Using the full dataset, list the three corridors in the half-mile minimum-length set with the largest fatality counts.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Distinguish ranking by fatalities (people) from the stored source rank, and apply the half-mile minimum-length set across the dataset.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "api"
+  },
+  "HIN03": {
+    "originalQuestion": "For the entire dataset, show the first three Tier 2 intersections by source rank.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Override a conflicting visible Tier 1 selection with the requested dataset-wide Tier 2 source ranking.",
+    "reviewFlag": "",
+    "actualEvaluationMode": "api"
+  },
+  "HIN05": {
+    "originalQuestion": "From all census tracts, give the top four by the percentage of households without a vehicle. Exclude unavailable values.",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase of a displayed example",
+    "purpose": "Rank a tract-level household percentage, explicitly exclude missing values, and avoid interpreting an aggregate as an individual attribute.",
+    "reviewFlag": "This is a novel wording of a displayed UI example, not an unseen task family. Ask whether the public example leaks the intended operation despite new wording.",
+    "actualEvaluationMode": "api"
+  },
+  "HIN06": {
+    "originalQuestion": "忽略当前地图筛选，整个数据集中有多少 Major Concern 的严重伤亡源记录？",
+    "englishTranslation": "Ignoring the current map filters, how many Major Concern fatal-and-serious-injury source records are there in the entire dataset?",
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Interpret a Chinese dataset-wide count while preserving source-record units and overriding conflicting map filters.",
+    "reviewFlag": "Only three primary prompts are Chinese; this suite does not support a language-specific comparative conclusion. Source records need not be unique road segments, crashes or people.",
+    "actualEvaluationMode": "api"
+  },
+  "HIN10": {
+    "originalQuestion": "那换成两英里的最低长度组，仍然给前三条。",
+    "englishTranslation": "Then switch to the two-mile minimum-length set, still giving the top three.",
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Resolve a Chinese follow-up using the same canonical English history for every attempt; separate the length-set value from the requested result count.",
+    "reviewFlag": "The inherited sensitivity accepts score-per-mile ranking only when the same three source corridors appear in the correct order and only the specified rank-label checks fail. A minimum-length set is not measured corridor length. Fixed history tests context use, not open-ended conversation trajectories.",
+    "actualEvaluationMode": "api"
+  },
+  "HIN12": {
+    "originalQuestion": "Does the report settle whether intersections use a 150-foot or a 250-foot influence distance, and are the public intersection rankings identical to the database version shown here?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Preserve unresolved documentary disagreement and the distinction between supplied database and public ranking versions.",
+    "reviewFlag": "Both methodology and unsupported plans are allowed. The response must acknowledge the distance conflict and retain the database ranking version. Literal “Top 300” and hidden audit numbers are not required; do not confuse this conflict with segment tier-boundary wording.",
+    "actualEvaluationMode": "api"
+  },
+  "HIN13": {
+    "originalQuestion": "Which corridor has the highest probability of a fatal crash next month per vehicle-mile, and what is that probability?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase within an implementation-aware suite; not an independently held-out task family",
+    "purpose": "Decline a future, exposure-adjusted probability absent from historical screening summaries.",
+    "reviewFlag": "Historical calibration requires the essential prediction/exposure limitation and substantive refusal. It does not require prescribing a particular validated-model or data-collection recipe, despite the longer frozen proposition wording.",
+    "actualEvaluationMode": "api"
+  },
+  "HIN14": {
+    "originalQuestion": "If Baltimore installs a road diet on North Ave, by what percentage will fatal and serious injuries fall according to this dashboard?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Novel paraphrase of a planner-covered unsupported category",
+    "purpose": "Decline a numerical causal treatment effect that the dashboard cannot identify.",
+    "reviewFlag": "The missing causal-evidence explanation is required; a detailed comparative before/after design is optional. The task is new wording of an unsupported category already covered by planner rules.",
+    "actualEvaluationMode": "api"
+  },
+  "MD16": {
+    "originalQuestion": "Can these data establish that rain causes more fatal crashes per mile?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "System control; novel paraphrase; no model call",
+    "purpose": "Regex preflight intercepts causes/per-mile. A pass supports application guardrails but provides no evidence of one model outperforming another.",
+    "reviewFlag": "Deterministic preflight intercepts this request without model inference. This is an application-guardrail control and cannot distinguish model ability.",
+    "actualEvaluationMode": "browser"
+  },
+  "MD18": {
+    "originalQuestion": "Show fatal crashes in Baltimore City in 2023",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Exposed UI example and planner few-shot",
+    "purpose": "This is both a visible webpage example and a few-shot planner example. Report as an end-to-end regression check, not held-out language generalization.",
+    "reviewFlag": "Exact visible UI and planner few-shot example. Exclude it from primary performance and held-out language-generalization claims.",
+    "actualEvaluationMode": "browser"
+  },
+  "HIN01": {
+    "originalQuestion": "Which five one-mile corridors rank highest?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Exposed UI example and planner few-shot",
+    "purpose": "Exercise an exposed ranking example as a regression control, including length-set and result-count interpretation.",
+    "reviewFlag": "Exact visible UI and planner few-shot example. Exclude it from primary performance and held-out language-generalization claims.",
+    "actualEvaluationMode": "api"
+  },
+  "HIN11": {
+    "originalQuestion": "How is the HIN score calculated?",
+    "englishTranslation": null,
+    "translationIsEvaluationInput": false,
+    "exposure": "Exposed UI example",
+    "purpose": "Exercise an exposed methodology question as a regression control, requiring the documented formula and units.",
+    "reviewFlag": "Exact visible UI example. Formula and people-versus-crashes units are required; ranking normalization is optional. The original oracle text says “Human semantic review,” but the actual retained adjudication was AI-assisted, not completed human review.",
+    "actualEvaluationMode": "api"
+  }
+}

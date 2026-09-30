@@ -1,0 +1,33 @@
+{
+  "scope": "Source-export identities only; no raw data or credentials. These hashes identify the retained Sep18/Sep29 reference snapshot, not current public totals.",
+  "hin_source_exports": [
+    {
+      "path": "app/hin-ranked-corridors.json",
+      "sha256": "b058d6959e7571be8f6aea3791a06854e0e29a6c7e80333a66a35f4a070608e9"
+    },
+    {
+      "path": "app/hin-intersections.json",
+      "sha256": "a0ebd17f559f7d4ebe5858f7ec6031c9f65eae8865fc83d20d2dd12d423bbe3b"
+    },
+    {
+      "path": "app/hin-fsi-segments.json",
+      "sha256": "ad3c68a0649104b5a5634cf1d0fe6019ab360bdab78f54597d573742f18c860f"
+    },
+    {
+      "path": "app/hin-nonmotor-segments.json",
+      "sha256": "20b21a5e9aef153f670ede477c4bb673c55203aef6583f663627f80555fd1aa0"
+    },
+    {
+      "path": "app/hin-tracts.json",
+      "sha256": "34f53eb596a158f49e231b93486376ccce51cfe5dd08f186c9070b4dcf0ed905"
+    },
+    {
+      "path": "app/hin-data-audit.json",
+      "sha256": "24627ecc30dce515e6a8e84365e4f03e3e3db9c67105c2606ca6d3fcc67b0a41"
+    }
+  ],
+  "oracle_independence": "All numeric oracles computed in a separate Python pass over app/hin-*.json without importing queryData, factualAnswer, reconcilePlan or model code. Plan expectations derived from requested task semantics and documented UI behavior; no model inference was run.",
+  "documentary_source_label": "UMD/BCDOT Draft Final Report \u00b7 September 2025",
+  "documentary_source_label_limitation": "Label retained in historical application notes, not an independently verified full report title.",
+  "method_limitation": "Source exports are shared with the application; original extraction, source collection and scientific HIN methodology are not independently validated by this experiment."
+}

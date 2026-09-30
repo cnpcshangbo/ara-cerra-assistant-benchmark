@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "complete": true,
+  "campaign_id": "qwen-newer-benchmark-2026-09-29",
+  "campaign_local_date": "2026-09-29",
+  "baseline_model_id": "qwen3-14b",
+  "newer_model_id": "qwen3.8-27b",
+  "primary_tasks": 24,
+  "repetitions": 3,
+  "primary_attempts_per_model": 72,
+  "control_attempts_per_model": 12,
+  "primary_browser_attempts_per_model": 21,
+  "pairedDifferences": [
+    {
+      "a": "qwen3-14b",
+      "b": "qwen3.8-27b",
+      "difference": -0.19444444444444442,
+      "taskCluster95CI": [
+        -0.38888888888888884,
+        -0.01388888888888884
+      ]
+    }
+  ],
+  "bootstrap": {
+    "method": "paired task-cluster percentile",
+    "resamples": 10000,
+    "seed": 20260918,
+    "confidence": 0.95
+  },
+  "difference_convention": "Each record is model a minus model b; the plot reverses baseline-minus-newer to newer-minus-baseline.",
+  "source_manifest_sha256": "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863",
+  "source_summary_sha256": "c5b2365345777b3e8e72ea9847272453a94d6a3a6bd16b2e8964b64ee48ed5a4"
+}

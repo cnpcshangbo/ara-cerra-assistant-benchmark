@@ -1,0 +1,62 @@
+{
+  "araStructure": {
+    "validation": "compiler Seal Level 1 checklist and deterministic source/link checks",
+    "officialAraCli": "not installed; not installed during task; this is not a CLI-issued seal",
+    "passed": true,
+    "checks": 507,
+    "claims": 7,
+    "experiments": 5,
+    "concepts": 9,
+    "nodes": 11,
+    "numberedFigures": 2,
+    "numberedTables": 1,
+    "additionalAppendixTables": 2,
+    "verbatimClaimSourcesChecked": 8,
+    "allScientificPdfPagesVisuallyInspected": 12,
+    "historicalSourcePdfSha256": "cbb6d45e6e6dbf9619527b16a530af897a9d0534a6515dd872fb55eaf9460217",
+    "disclosedDocumentationCorrections": [
+      "Historical Appendix A MD16 API label corrected to Browser in public manuscript",
+      "Historical Appendix A HIN01 Browser label corrected to API in public manuscript"
+    ],
+    "coveragePasses": [
+      "Full manuscript+appendices and all numberedobjects",
+      "Scoped scientific trajectory and limitations; no unrelated private history",
+      "Cross-layer source numbers, exact quotes, code pointers and public derivative boundaries"
+    ],
+    "issues": []
+  },
+  "viewerBuild": {
+    "canonical_template_sha256": "89d5476b5ba1f6bcfbb09ece6a284f38890c18dd092ba3092e3d52b6963137ca",
+    "template_changed_outside_json_slot": false,
+    "nodes": 11,
+    "dead_ends": 1,
+    "figure_objects": 2,
+    "enrichment_layers": [
+      "context",
+      "glossary",
+      "dependencies",
+      "recipes"
+    ],
+    "concepts": 9,
+    "dependencies": 6,
+    "recipe_files": 4,
+    "bytes": 1612488,
+    "trajectory_sha256": "2fbfc76884deefcc99771b7e8f7fe2c7830ece2a9fb5e20442e13ad2c5bd2395",
+    "external_code_pointers_resolved_at_view_time": false
+  },
+  "viewerBrowser": {
+    "nodes": 11,
+    "allNodesOpened": true,
+    "allFourLayersOpened": true,
+    "deadEndVisibleNodes": 1,
+    "searchVisibleNodes": 2,
+    "consoleErrors": [],
+    "remoteRequests": [],
+    "mobileOverflow": false
+  },
+  "publicationPrivacyReview": {
+    "completed": true,
+    "findings": [],
+    "scope": "Public text, embedded viewer data/images, PDF text and figure regions; known-secret byte scan; no raw inference/source records included. Pattern checking is supplemental, not a universal guarantee."
+  }
+}

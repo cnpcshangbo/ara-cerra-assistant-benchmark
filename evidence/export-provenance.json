@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "scope": "Allowlisted code and evaluated scalar outcomes; not original raw trial logs or source data.",
+  "integrityMeaning": "Original hashes identify private archive files, not public derivatives. Derivative hashes identify the separate public exports. Hashes attest identity, not validity of source data or ratings.",
+  "files": [
+    {
+      "publicPath": "src/frozen-grader/transportation-model-benchmark-2026-09-18/grader-mdsp.mjs",
+      "publicSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "originalPath": "transportation-model-benchmark-2026-09-18/grader-mdsp.mjs",
+      "originalSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/transportation-model-benchmark-2026-09-18/grader-hin.mjs",
+      "publicSha256": "869e52bbd28f7d1d0fa2484e60314141473bbf7ecc243fcbc6c096ed3f1985f7",
+      "originalPath": "transportation-model-benchmark-2026-09-18/grader-hin.mjs",
+      "originalSha256": "869e52bbd28f7d1d0fa2484e60314141473bbf7ecc243fcbc6c096ed3f1985f7",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/transportation-model-benchmark-2026-09-18/sensitivity.mjs",
+      "publicSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "originalPath": "transportation-model-benchmark-2026-09-18/sensitivity.mjs",
+      "originalSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/transportation-gpt-benchmark-2026-09-23/grader-mdsp.mjs",
+      "publicSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "originalPath": "transportation-gpt-benchmark-2026-09-23/grader-mdsp.mjs",
+      "originalSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/transportation-gpt-benchmark-2026-09-23/grader-hin.mjs",
+      "publicSha256": "23a78a57a77769efd7aa03e136622499a3e983e078564380ee252314eeeda53d",
+      "originalPath": "transportation-gpt-benchmark-2026-09-23/grader-hin.mjs",
+      "originalSha256": "23a78a57a77769efd7aa03e136622499a3e983e078564380ee252314eeeda53d",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/transportation-gpt-benchmark-2026-09-23/sensitivity.mjs",
+      "publicSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "originalPath": "transportation-gpt-benchmark-2026-09-23/sensitivity.mjs",
+      "originalSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/local-model-benchmark-2026-09-24/grader-mdsp.mjs",
+      "publicSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "originalPath": "local-model-benchmark-2026-09-24/grader-mdsp.mjs",
+      "originalSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/local-model-benchmark-2026-09-24/grader-hin.mjs",
+      "publicSha256": "dab5eb9206ee511caea6fd4fb5ad27681bdc23534751a5c71f9e446731602648",
+      "originalPath": "local-model-benchmark-2026-09-24/grader-hin.mjs",
+      "originalSha256": "dab5eb9206ee511caea6fd4fb5ad27681bdc23534751a5c71f9e446731602648",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/local-model-benchmark-2026-09-24/sensitivity.mjs",
+      "publicSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "originalPath": "local-model-benchmark-2026-09-24/sensitivity.mjs",
+      "originalSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/qwen-newer-benchmark-2026-09-29/grader-mdsp.mjs",
+      "publicSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "originalPath": "qwen-newer-benchmark-2026-09-29/grader-mdsp.mjs",
+      "originalSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/qwen-newer-benchmark-2026-09-29/grader-hin.mjs",
+      "publicSha256": "ae6c72d815fb8eeb7fb9e500e849c3a973756c7ddc1f79e260a75f830fd126ec",
+      "originalPath": "qwen-newer-benchmark-2026-09-29/grader-hin.mjs",
+      "originalSha256": "ae6c72d815fb8eeb7fb9e500e849c3a973756c7ddc1f79e260a75f830fd126ec",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/qwen-newer-benchmark-2026-09-29/sensitivity.mjs",
+      "publicSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "originalPath": "qwen-newer-benchmark-2026-09-29/sensitivity.mjs",
+      "originalSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/gpt61-sol-benchmark-2026-09-29/grader-mdsp.mjs",
+      "publicSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/grader-mdsp.mjs",
+      "originalSha256": "a265ac8528fcff148883eb99ad3d856edcbf0014e848b95256595fefeb546ab2",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/gpt61-sol-benchmark-2026-09-29/grader-hin.mjs",
+      "publicSha256": "bc9827d46a6bce483bb4bac184af22b4161bc646a94b088d97b9969199d07267",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/grader-hin.mjs",
+      "originalSha256": "bc9827d46a6bce483bb4bac184af22b4161bc646a94b088d97b9969199d07267",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/frozen-grader/gpt61-sol-benchmark-2026-09-29/sensitivity.mjs",
+      "publicSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/sensitivity.mjs",
+      "originalSha256": "da3c87f9b0a22f4bf0bc5a7d4c3027479e15508ebbb0962af5d314f162403b6f",
+      "transformation": "byte-identical copy; existing comments retained"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/assistant-planner.ts",
+      "publicSha256": "9a09cf07f052e41f156a50ec3bea4f4edfff10196cba9f32744154bad5ad9c1e",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/assistant-planner.ts",
+      "originalSha256": "9a09cf07f052e41f156a50ec3bea4f4edfff10196cba9f32744154bad5ad9c1e",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/assistant-data.ts",
+      "publicSha256": "63caa88c9dc1c1d448c8e966d413673853d06c821ee1bca22b7a9bb6a5b2e04e",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/assistant-data.ts",
+      "originalSha256": "63caa88c9dc1c1d448c8e966d413673853d06c821ee1bca22b7a9bb6a5b2e04e",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/mdsp-assistant-data.ts",
+      "publicSha256": "37e18785279c48680a3a8aa8bf66c5c9d525076e486e0883550d049132aeee8d",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/mdsp-assistant-data.ts",
+      "originalSha256": "37e18785279c48680a3a8aa8bf66c5c9d525076e486e0883550d049132aeee8d",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/mdsp-filter-actions.ts",
+      "publicSha256": "c4757e855bb736e465013b99127ccc87cc21515e1f1f57c76adc61bd0db74440",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/mdsp-filter-actions.ts",
+      "originalSha256": "c4757e855bb736e465013b99127ccc87cc21515e1f1f57c76adc61bd0db74440",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/hin-data.ts",
+      "publicSha256": "7c9ddee49ce2468f8a87c4c24652826bfadeaff4eefc82cc17ff8f6a9565d950",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/hin-data.ts",
+      "originalSha256": "7c9ddee49ce2468f8a87c4c24652826bfadeaff4eefc82cc17ff8f6a9565d950",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/scenarios.ts",
+      "publicSha256": "8868cd076f9a268d3893083b6ec436bba348f16add416d4fa2158bbf98abe33d",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/scenarios.ts",
+      "originalSha256": "8868cd076f9a268d3893083b6ec436bba348f16add416d4fa2158bbf98abe33d",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/model-catalog.ts",
+      "publicSha256": "f6b12db3c2aec243d7793f757b0466ec414d991fb7e772f29ba8956aaea6c857",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/model-catalog.ts",
+      "originalSha256": "f6b12db3c2aec243d7793f757b0466ec414d991fb7e772f29ba8956aaea6c857",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/dashboard/maryland/estimated-location.tsx",
+      "publicSha256": "90fd36e68eba7fc5975e0442844ddd5f4da131e6c82253e6543f51b7f307ee18",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/dashboard/maryland/estimated-location.tsx",
+      "originalSha256": "90fd36e68eba7fc5975e0442844ddd5f4da131e6c82253e6543f51b7f307ee18",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/app/dashboard/maryland/location-check.tsx",
+      "publicSha256": "7b7987b23e4f535385a467ebf114081199665d99cc40ab3d374fab262de8901b",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/dashboard/maryland/location-check.tsx",
+      "originalSha256": "7b7987b23e4f535385a467ebf114081199665d99cc40ab3d374fab262de8901b",
+      "transformation": "byte-identical copy; no database, auth implementation or environment included"
+    },
+    {
+      "publicPath": "src/app-snapshot/hin-inference-route.excerpt.ts",
+      "publicSha256": "ddfa9af95d42df02114e7d811c3afd436389cc64ad4912eeefbbb5c72a7232e3",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/api/assistant/route.ts",
+      "originalSha256": "d9363687d2f6ce00885c7e3f85cf81f3e7928f8ce72b6f2e3f8d7b650dda093c",
+      "sourceStartLine": 62,
+      "sourceEndLine": 81,
+      "transformation": "verbatim contiguous excerpt, not a standalone module"
+    },
+    {
+      "publicPath": "src/app-snapshot/maryland-inference-route.excerpt.ts",
+      "publicSha256": "08ac1f15f6032476779c7a6cdf09444e2c3523df734f6a2dea94e8d22178083b",
+      "originalPath": "gpt61-sol-benchmark-2026-09-29/app-fixture/app/api/mdsp-assistant/route.ts",
+      "originalSha256": "5a0c4c4724e8b76bc28c037d88580f36346272f34a997871c71d29b40bb3febe",
+      "sourceStartLine": 24,
+      "sourceEndLine": 57,
+      "transformation": "verbatim contiguous excerpt, not a standalone module"
+    },
+    {
+      "publicPath": "evidence/campaigns.json",
+      "publicSha256": "f1f2e05df5d6dc9d235342c88409f684039cf15cabfacd773586bb417478f638",
+      "transformation": "allowlisted campaign metadata; original sources omitted",
+      "originalSources": [
+        {
+          "path": "transportation-model-benchmark-2026-09-18/manifest.json",
+          "sha256": "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e"
+        },
+        {
+          "path": "transportation-model-benchmark-2026-09-18/summary.json",
+          "sha256": "d2baf22c818f86e9e840dc292ad9591f1264fd2761b766f8901a2c150359a118"
+        },
+        {
+          "path": "transportation-gpt-benchmark-2026-09-23/manifest.json",
+          "sha256": "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb"
+        },
+        {
+          "path": "transportation-gpt-benchmark-2026-09-23/summary.json",
+          "sha256": "5d3f1255ad524f36df40050cff38e44aa873aca73454fe4b4440f9bb0d146d22"
+        },
+        {
+          "path": "local-model-benchmark-2026-09-24/manifest.json",
+          "sha256": "a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814"
+        },
+        {
+          "path": "local-model-benchmark-2026-09-24/summary.json",
+          "sha256": "cfac5c01dfa2e837170dd153ac457326e54d5090182bb729e6e9c0f61118d99c"
+        },
+        {
+          "path": "qwen-newer-benchmark-2026-09-29/manifest.json",
+          "sha256": "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863"
+        },
+        {
+          "path": "qwen-newer-benchmark-2026-09-29/summary.json",
+          "sha256": "c5b2365345777b3e8e72ea9847272453a94d6a3a6bd16b2e8964b64ee48ed5a4"
+        },
+        {
+          "path": "gpt61-sol-benchmark-2026-09-29/manifest.json",
+          "sha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77"
+        },
+        {
+          "path": "gpt61-sol-benchmark-2026-09-29/summary.json",
+          "sha256": "57a2d7ba58c9a300b479a6e30b76cf46e573fb2af9b426c5682dece191d417aa"
+        }
+      ]
+    },
+    {
+      "publicPath": "evidence/evaluated-records.json",
+      "publicSha256": "7b7dc760efa8a3f33f0a9fea66b70650e2ca5a8c04a4c4cd1df52a0d185377b7",
+      "transformation": "scalar outcome/check allowlist; response text, source records, requests, URLs and review prose omitted",
+      "originalSources": [
+        {
+          "path": "transportation-model-benchmark-2026-09-18/graded.json",
+          "sha256": "d7c3f143cad24a15a16fa4bb194863cded0d5a4279ecc92b9bbd10b6d8b386e7"
+        },
+        {
+          "path": "transportation-gpt-benchmark-2026-09-23/graded.json",
+          "sha256": "75ed6b97ac3844001974f84a26c2776f5285847a7780dc05f7f87096fb405ba0"
+        },
+        {
+          "path": "local-model-benchmark-2026-09-24/graded.json",
+          "sha256": "525413514c3f82cdb2e9de33d08313f2898ccf5c0b501cd1d5a40de7262228bd"
+        },
+        {
+          "path": "qwen-newer-benchmark-2026-09-29/graded.json",
+          "sha256": "6c89a871db64b4359ff0960f0c3d6cc827966d9e7b64b403f0950a7b721d4bbe"
+        },
+        {
+          "path": "gpt61-sol-benchmark-2026-09-29/graded.json",
+          "sha256": "3279d285555d540f23eba826947fd3b7fafaf95dad30a15fa6454188ad203f72"
+        }
+      ]
+    },
+    {
+      "publicPath": "evidence/expected-aggregates.json",
+      "publicSha256": "39d36d4074663740af25ef2213c17a107d664efc8e780e80a4932e457ef22068",
+      "transformation": "allowlisted aggregate sections; per-case raw responses omitted",
+      "originalSources": [
+        {
+          "path": "transportation-model-benchmark-2026-09-18/summary.json",
+          "sha256": "d2baf22c818f86e9e840dc292ad9591f1264fd2761b766f8901a2c150359a118"
+        },
+        {
+          "path": "transportation-gpt-benchmark-2026-09-23/summary.json",
+          "sha256": "5d3f1255ad524f36df40050cff38e44aa873aca73454fe4b4440f9bb0d146d22"
+        },
+        {
+          "path": "local-model-benchmark-2026-09-24/summary.json",
+          "sha256": "cfac5c01dfa2e837170dd153ac457326e54d5090182bb729e6e9c0f61118d99c"
+        },
+        {
+          "path": "qwen-newer-benchmark-2026-09-29/summary.json",
+          "sha256": "c5b2365345777b3e8e72ea9847272453a94d6a3a6bd16b2e8964b64ee48ed5a4"
+        },
+        {
+          "path": "gpt61-sol-benchmark-2026-09-29/summary.json",
+          "sha256": "57a2d7ba58c9a300b479a6e30b76cf46e573fb2af9b426c5682dece191d417aa"
+        }
+      ]
+    },
+    {
+      "publicPath": "src/reproduce.py",
+      "publicSha256": "e109e7a087743dfddff0c48c4c0cc6bc5cc59a7ee4f8ea2d4fd4abc00b0cfbb7",
+      "transformation": "portable adaptation of the original aggregation method to scalar public records, with independent input and hash validation",
+      "originalSources": [
+        {
+          "path": "transportation-model-benchmark-2026-09-18/summarize.py",
+          "sha256": "90141e65dd8983668a1022f93497271e303b4587513c55607e6f9331fe6919c8"
+        },
+        {
+          "path": "transportation-gpt-benchmark-2026-09-23/summarize.py",
+          "sha256": "90141e65dd8983668a1022f93497271e303b4587513c55607e6f9331fe6919c8"
+        },
+        {
+          "path": "local-model-benchmark-2026-09-24/summarize.py",
+          "sha256": "90141e65dd8983668a1022f93497271e303b4587513c55607e6f9331fe6919c8"
+        },
+        {
+          "path": "qwen-newer-benchmark-2026-09-29/summarize.py",
+          "sha256": "90141e65dd8983668a1022f93497271e303b4587513c55607e6f9331fe6919c8"
+        },
+        {
+          "path": "gpt61-sol-benchmark-2026-09-29/summarize.py",
+          "sha256": "90141e65dd8983668a1022f93497271e303b4587513c55607e6f9331fe6919c8"
+        }
+      ]
+    },
+    {
+      "publicPath": "src/grade-response.mjs",
+      "publicSha256": "a6e9051000f308bab861fecadc2e7fd6f8cd4e7ff7d9467b8a538ee3baa2c6bc",
+      "transformation": "portable adaptation of the common protocol overlay; exact core graders remain separate; 924 original private attempts regraded with exact parity",
+      "originalSources": [
+        {
+          "path": "transportation-model-benchmark-2026-09-18/grade-run.mjs",
+          "sha256": "077598c0c8b8afbfb02dc35657fe3f3a163b78553db85d11f42b1e7df2ec1e8a"
+        },
+        {
+          "path": "transportation-gpt-benchmark-2026-09-23/grade-run.mjs",
+          "sha256": "a2ead041248c472193f7c541d64b6d5e7dc5c75aee9cdb31029adaa39c0acf8f"
+        },
+        {
+          "path": "local-model-benchmark-2026-09-24/grade-run.mjs",
+          "sha256": "d6c9ff91a4bcc7d796b5ec5d17a914c669b7b7db83830fb1bd1b24f09df6bd4e"
+        },
+        {
+          "path": "qwen-newer-benchmark-2026-09-29/grade-run.mjs",
+          "sha256": "20d36e1bc6807fa82a9698e0545cfec8b252f438769c5cb876dbb74cafd968fa"
+        },
+        {
+          "path": "gpt61-sol-benchmark-2026-09-29/grade-run.mjs",
+          "sha256": "36f5b1ddf1286c6a77e20491493f6c74c798ab60ef531cdb55f6488ae8928fe9"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    "raw trial logs and model responses",
+    "selected crash record and GPS",
+    "individual person/vehicle/crash databases",
+    "account/auth implementations",
+    "credentials, cookies, feedback receipts, provider prompts and private endpoints",
+    "unrelated research logs, local account names, deployment IDs"
+  ]
+}

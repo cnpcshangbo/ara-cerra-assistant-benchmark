@@ -1,0 +1,1744 @@
+{
+  "schemaVersion": 1,
+  "campaigns": [
+    {
+      "campaignId": "transportation-model-benchmark-2026-09-18",
+      "manifestSha256": "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e",
+      "complete": true,
+      "trialCount": 252,
+      "expectedTrials": 252,
+      "caseCount": 28,
+      "primaryCaseCount": 24,
+      "runWindow": {
+        "start": "2026-09-19T03:35:13.887Z",
+        "finish": "2026-09-19T03:56:15.466Z"
+      },
+      "models": {
+        "qwen3-8b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 51,
+            "score": 0.7083333333333334,
+            "medianSeconds": 1.0636407779999937,
+            "p90Seconds": 2.1702808556000033,
+            "successfulMedianSeconds": 1.0258270120000235,
+            "medianBrowserRenderSeconds": 5.618836397000006,
+            "successWithin30s": 51,
+            "http200": 63,
+            "unintendedMutations": 6,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 54
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 11,
+            "score": 0.9166666666666666,
+            "medianSeconds": 0.7927944355,
+            "p90Seconds": 2.442884281799931,
+            "successfulMedianSeconds": 0.7811907340000034,
+            "medianBrowserRenderSeconds": 1.9128294030000106,
+            "successWithin30s": 11,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.5277777777777778,
+            0.875
+          ],
+          "allThreePassedCases": 16,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 6,
+              "score": 0.6666666666666666,
+              "medianSeconds": 2.0972544920000002,
+              "p90Seconds": 2.214390546000004,
+              "successfulMedianSeconds": 2.07747821500001,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 6,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 12,
+              "score": 0.8,
+              "medianSeconds": 0.8122949740001931,
+              "p90Seconds": 1.6318771607999456,
+              "successfulMedianSeconds": 0.8053512920000067,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 12,
+              "http200": 12,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 24,
+              "score": 0.8888888888888888,
+              "medianSeconds": 1.401389095,
+              "p90Seconds": 4.043367828399969,
+              "successfulMedianSeconds": 1.5713982904999866,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 24,
+              "http200": 27,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 24
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 3,
+              "score": 0.5,
+              "medianSeconds": 0.8294484029999585,
+              "p90Seconds": 1.2225489330001,
+              "successfulMedianSeconds": 0.4437349590000231,
+              "medianBrowserRenderSeconds": 0.8375734389999998,
+              "successWithin30s": 3,
+              "http200": 3,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 3
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 6,
+              "score": 0.4,
+              "medianSeconds": 0.7994159920000239,
+              "p90Seconds": 1.5503937616000416,
+              "successfulMedianSeconds": 0.7368690389999828,
+              "medianBrowserRenderSeconds": 6.514257832000003,
+              "successWithin30s": 6,
+              "http200": 12,
+              "unintendedMutations": 6,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 6
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 9,
+              "score": 0.42857142857142855,
+              "medianSeconds": 0.7994159920000239,
+              "p90Seconds": 1.5351272020000033,
+              "successfulMedianSeconds": 0.6688372100000269,
+              "medianBrowserRenderSeconds": 5.618836397000006,
+              "successWithin30s": 9,
+              "http200": 15,
+              "unintendedMutations": 6,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 42,
+              "score": 0.8235294117647058,
+              "medianSeconds": 1.401389095,
+              "p90Seconds": 2.9355569609999947,
+              "successfulMedianSeconds": 1.2864725655000075,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 42,
+              "http200": 48,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 45
+            }
+          }
+        },
+        "llama3.1-8b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 40,
+            "score": 0.5555555555555556,
+            "medianSeconds": 1.9962820175000233,
+            "p90Seconds": 3.7675563313000073,
+            "successfulMedianSeconds": 1.9210537469999398,
+            "medianBrowserRenderSeconds": 6.65872053500003,
+            "successWithin30s": 40,
+            "http200": 70,
+            "unintendedMutations": 7,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 44
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 1.8257397515000193,
+            "p90Seconds": 3.2505486894999978,
+            "successfulMedianSeconds": 1.8257397515000193,
+            "medianBrowserRenderSeconds": 2.4280828679999686,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.3611111111111111,
+            0.75
+          ],
+          "allThreePassedCases": 12,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 2,
+              "score": 0.2222222222222222,
+              "medianSeconds": 3.092302573999972,
+              "p90Seconds": 3.203514315000002,
+              "successfulMedianSeconds": 3.0863665979999935,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 2,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 6
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 6,
+              "score": 0.4,
+              "medianSeconds": 1.864070223000017,
+              "p90Seconds": 1.909780995000049,
+              "successfulMedianSeconds": 1.875864545999997,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 6,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 6
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 18,
+              "score": 0.6666666666666666,
+              "medianSeconds": 3.120886950999964,
+              "p90Seconds": 4.694359856800016,
+              "successfulMedianSeconds": 2.7495482744999746,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 18,
+              "http200": 25,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 18
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 0,
+              "score": 0.0,
+              "medianSeconds": 3.1949653024999716,
+              "p90Seconds": 3.2531361945000827,
+              "successfulMedianSeconds": null,
+              "medianBrowserRenderSeconds": 5.768377855000027,
+              "successWithin30s": 0,
+              "http200": 6,
+              "unintendedMutations": 6,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 0
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 14,
+              "score": 0.9333333333333333,
+              "medianSeconds": 1.855416916999966,
+              "p90Seconds": 3.206489228599958,
+              "successfulMedianSeconds": 1.8532998254999402,
+              "medianBrowserRenderSeconds": 7.567691188000026,
+              "successWithin30s": 14,
+              "http200": 15,
+              "unintendedMutations": 1,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 14
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 14,
+              "score": 0.6666666666666666,
+              "medianSeconds": 2.0101584760000115,
+              "p90Seconds": 3.2454806080001872,
+              "successfulMedianSeconds": 1.8532998254999402,
+              "medianBrowserRenderSeconds": 6.65872053500003,
+              "successWithin30s": 14,
+              "http200": 21,
+              "unintendedMutations": 7,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 14
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 26,
+              "score": 0.5098039215686274,
+              "medianSeconds": 1.9938717310000211,
+              "p90Seconds": 4.040061910999939,
+              "successfulMedianSeconds": 1.983068578000064,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 26,
+              "http200": 49,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 30
+            }
+          }
+        },
+        "gemma3-4b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 34,
+            "score": 0.4722222222222222,
+            "medianSeconds": 2.3992792554999998,
+            "p90Seconds": 4.178417250299995,
+            "successfulMedianSeconds": 2.307191313499992,
+            "medianBrowserRenderSeconds": 7.429377805000055,
+            "successWithin30s": 34,
+            "http200": 63,
+            "unintendedMutations": 3,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 37
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 9,
+            "score": 0.75,
+            "medianSeconds": 3.0823840079999574,
+            "p90Seconds": 4.417341433300014,
+            "successfulMedianSeconds": 2.0728656060001813,
+            "medianBrowserRenderSeconds": 3.0281239274999825,
+            "successWithin30s": 9,
+            "http200": 9,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 9
+          },
+          "taskCluster95CI": [
+            0.2777777777777778,
+            0.6666666666666666
+          ],
+          "allThreePassedCases": 11,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 0,
+              "score": 0.0,
+              "medianSeconds": 2.1360622529999964,
+              "p90Seconds": 4.635241794399987,
+              "successfulMedianSeconds": null,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 0,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 3
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 9,
+              "score": 0.6,
+              "medianSeconds": 2.1563917809999547,
+              "p90Seconds": 4.084286523400043,
+              "successfulMedianSeconds": 2.122329605999985,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 9,
+              "http200": 12,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 13,
+              "score": 0.48148148148148145,
+              "medianSeconds": 3.7607588539999997,
+              "p90Seconds": 4.976739983000049,
+              "successfulMedianSeconds": 2.4204829549998976,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 13,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 13
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 0,
+              "score": 0.0,
+              "medianSeconds": 2.9231262940000744,
+              "p90Seconds": 3.905666953499982,
+              "successfulMedianSeconds": null,
+              "medianBrowserRenderSeconds": 4.11870394700003,
+              "successWithin30s": 0,
+              "http200": 6,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 0
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 12,
+              "score": 0.8,
+              "medianSeconds": 2.1037912639999994,
+              "p90Seconds": 3.854279047999997,
+              "successfulMedianSeconds": 2.1151094295000075,
+              "medianBrowserRenderSeconds": 7.859109651000006,
+              "successWithin30s": 12,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 12,
+              "score": 0.5714285714285714,
+              "medianSeconds": 2.1037912639999994,
+              "p90Seconds": 3.860379924000008,
+              "successfulMedianSeconds": 2.1151094295000075,
+              "medianBrowserRenderSeconds": 7.429377805000055,
+              "successWithin30s": 12,
+              "http200": 21,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 22,
+              "score": 0.43137254901960786,
+              "medianSeconds": 3.507452517000027,
+              "p90Seconds": 4.509212559000007,
+              "successfulMedianSeconds": 2.3992792554999998,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 22,
+              "http200": 42,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 25
+            }
+          }
+        }
+      },
+      "pairedDifferences": [
+        {
+          "a": "qwen3-8b",
+          "b": "llama3.1-8b",
+          "difference": 0.1527777777777778,
+          "taskCluster95CI": [
+            -0.08333333333333337,
+            0.38888888888888895
+          ]
+        },
+        {
+          "a": "qwen3-8b",
+          "b": "gemma3-4b",
+          "difference": 0.23611111111111116,
+          "taskCluster95CI": [
+            0.01388888888888884,
+            0.45833333333333337
+          ]
+        },
+        {
+          "a": "llama3.1-8b",
+          "b": "gemma3-4b",
+          "difference": 0.08333333333333337,
+          "taskCluster95CI": [
+            -0.1388888888888889,
+            0.2916666666666667
+          ]
+        }
+      ],
+      "sensitivity": {
+        "qwen3-8b": {
+          "passed": 51,
+          "attempts": 72,
+          "score": 0.7083333333333334,
+          "adjusted": 0
+        },
+        "llama3.1-8b": {
+          "passed": 40,
+          "attempts": 72,
+          "score": 0.5555555555555556,
+          "adjusted": 0
+        },
+        "gemma3-4b": {
+          "passed": 48,
+          "attempts": 72,
+          "score": 0.6666666666666666,
+          "adjusted": 14
+        }
+      }
+    },
+    {
+      "campaignId": "transportation-gpt-benchmark-2026-09-23",
+      "manifestSha256": "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb",
+      "complete": true,
+      "trialCount": 252,
+      "expectedTrials": 252,
+      "caseCount": 28,
+      "primaryCaseCount": 24,
+      "runWindow": {
+        "start": "2026-09-24T01:46:05.455Z",
+        "finish": "2026-09-24T02:00:40.924Z"
+      },
+      "models": {
+        "openai-gpt-4.1-mini": {
+          "primary": {
+            "attempts": 72,
+            "passed": 57,
+            "score": 0.7916666666666666,
+            "medianSeconds": 1.1980543434999709,
+            "p90Seconds": 2.5857549080999336,
+            "successfulMedianSeconds": 1.1917706689999905,
+            "medianBrowserRenderSeconds": 4.286096760999993,
+            "successWithin30s": 57,
+            "http200": 72,
+            "unintendedMutations": 3,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 59
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 0.9069609325000201,
+            "p90Seconds": 2.792844812699996,
+            "successfulMedianSeconds": 0.9069609325000201,
+            "medianBrowserRenderSeconds": 1.6983734530000074,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.625,
+            0.9305555555555556
+          ],
+          "allThreePassedCases": 18,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 6,
+              "score": 0.6666666666666666,
+              "medianSeconds": 2.1573623980000267,
+              "p90Seconds": 2.6128351729999295,
+              "successfulMedianSeconds": 2.147528928499989,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 6,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 8
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 1.0534846929999766,
+              "p90Seconds": 1.3550008924000199,
+              "successfulMedianSeconds": 1.0534846929999766,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 22,
+              "score": 0.8148148148148148,
+              "medianSeconds": 1.2249751219999743,
+              "p90Seconds": 3.90381412240004,
+              "successfulMedianSeconds": 1.346633803000048,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 22,
+              "http200": 27,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 22
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 2,
+              "score": 0.3333333333333333,
+              "medianSeconds": 0.9193286725000072,
+              "p90Seconds": 1.5455046939999593,
+              "successfulMedianSeconds": 0.9193286725000072,
+              "medianBrowserRenderSeconds": 1.7844342415000138,
+              "successWithin30s": 2,
+              "http200": 6,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 2
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 12,
+              "score": 0.8,
+              "medianSeconds": 0.9618705159999663,
+              "p90Seconds": 2.0576129296,
+              "successfulMedianSeconds": 0.9251291664999735,
+              "medianBrowserRenderSeconds": 5.1943479240000014,
+              "successWithin30s": 12,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 14,
+              "score": 0.6666666666666666,
+              "medianSeconds": 0.9618705159999663,
+              "p90Seconds": 1.8456213259999932,
+              "successfulMedianSeconds": 0.9251291664999735,
+              "medianBrowserRenderSeconds": 4.286096760999993,
+              "successWithin30s": 14,
+              "http200": 21,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 14
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 43,
+              "score": 0.8431372549019608,
+              "medianSeconds": 1.2249751219999743,
+              "p90Seconds": 3.3199030610000047,
+              "successfulMedianSeconds": 1.2389421459999868,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 43,
+              "http200": 51,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 45
+            }
+          }
+        },
+        "openai-gpt-5.4-mini": {
+          "primary": {
+            "attempts": 72,
+            "passed": 58,
+            "score": 0.8055555555555556,
+            "medianSeconds": 1.1243819125000156,
+            "p90Seconds": 2.7600548336,
+            "successfulMedianSeconds": 1.2805972205000433,
+            "medianBrowserRenderSeconds": 4.2201483500000325,
+            "successWithin30s": 58,
+            "http200": 69,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 59
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 0.8850427845000086,
+            "p90Seconds": 1.7409489573999775,
+            "successfulMedianSeconds": 0.8850427845000086,
+            "medianBrowserRenderSeconds": 1.4406389915000182,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.6527777777777778,
+            0.9305555555555556
+          ],
+          "allThreePassedCases": 17,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 8,
+              "score": 0.8888888888888888,
+              "medianSeconds": 1.6602631040000124,
+              "p90Seconds": 2.627067927799998,
+              "successfulMedianSeconds": 1.8088581485000104,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 8,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 0.9430083710000036,
+              "p90Seconds": 2.1355065042000088,
+              "successfulMedianSeconds": 0.9430083710000036,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 19,
+              "score": 0.7037037037037037,
+              "medianSeconds": 1.4168276179999812,
+              "p90Seconds": 4.473304538599985,
+              "successfulMedianSeconds": 2.140847001999995,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 19,
+              "http200": 24,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 19
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 2,
+              "score": 0.3333333333333333,
+              "medianSeconds": 0.9913423994999903,
+              "p90Seconds": 1.072159200500013,
+              "successfulMedianSeconds": 1.0424248914999916,
+              "medianBrowserRenderSeconds": 1.0016233990000036,
+              "successWithin30s": 2,
+              "http200": 6,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 2
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 14,
+              "score": 0.9333333333333333,
+              "medianSeconds": 0.9012208070000634,
+              "p90Seconds": 1.4508897096000262,
+              "successfulMedianSeconds": 0.8882824335000478,
+              "medianBrowserRenderSeconds": 4.693168622000027,
+              "successWithin30s": 14,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 14
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 16,
+              "score": 0.7619047619047619,
+              "medianSeconds": 0.9338453819999704,
+              "p90Seconds": 1.230230457000085,
+              "successfulMedianSeconds": 0.9175330945000169,
+              "medianBrowserRenderSeconds": 4.2201483500000325,
+              "successWithin30s": 16,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 16
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 42,
+              "score": 0.8235294117647058,
+              "medianSeconds": 1.54416754200001,
+              "p90Seconds": 3.9537087639999955,
+              "successfulMedianSeconds": 1.6051693755000014,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 42,
+              "http200": 48,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 43
+            }
+          }
+        },
+        "openai-gpt-5.4": {
+          "primary": {
+            "attempts": 72,
+            "passed": 66,
+            "score": 0.9166666666666666,
+            "medianSeconds": 1.2728022905000254,
+            "p90Seconds": 2.93842482579995,
+            "successfulMedianSeconds": 1.2728022905000254,
+            "medianBrowserRenderSeconds": 4.494136492999969,
+            "successWithin30s": 66,
+            "http200": 72,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 66
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 1.0513352614999896,
+            "p90Seconds": 2.0868741482,
+            "successfulMedianSeconds": 1.0513352614999896,
+            "medianBrowserRenderSeconds": 1.5482591169999795,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.7916666666666666,
+            1.0
+          ],
+          "allThreePassedCases": 22,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 9,
+              "score": 1.0,
+              "medianSeconds": 2.5976456929999987,
+              "p90Seconds": 3.00907059740001,
+              "successfulMedianSeconds": 2.5976456929999987,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 9,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 1.0584075900000025,
+              "p90Seconds": 1.3141447275999933,
+              "successfulMedianSeconds": 1.0584075900000025,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 24,
+              "score": 0.8888888888888888,
+              "medianSeconds": 1.549313660999993,
+              "p90Seconds": 4.187032067000008,
+              "successfulMedianSeconds": 1.4683025949999573,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 24,
+              "http200": 27,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 24
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 6,
+              "score": 1.0,
+              "medianSeconds": 1.115367637999996,
+              "p90Seconds": 1.7030574485000107,
+              "successfulMedianSeconds": 1.115367637999996,
+              "medianBrowserRenderSeconds": 1.1229178534999955,
+              "successWithin30s": 6,
+              "http200": 6,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 6
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 12,
+              "score": 0.8,
+              "medianSeconds": 1.042435959000024,
+              "p90Seconds": 1.3962300230000284,
+              "successfulMedianSeconds": 1.0341722055000138,
+              "medianBrowserRenderSeconds": 4.796964953999966,
+              "successWithin30s": 12,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 18,
+              "score": 0.8571428571428571,
+              "medianSeconds": 1.0515648849999997,
+              "p90Seconds": 1.466962479000038,
+              "successfulMedianSeconds": 1.047000422000012,
+              "medianBrowserRenderSeconds": 4.494136492999969,
+              "successWithin30s": 18,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 18
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 48,
+              "score": 0.9411764705882353,
+              "medianSeconds": 1.403661039999919,
+              "p90Seconds": 3.475338291000051,
+              "successfulMedianSeconds": 1.3548990249999988,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 48,
+              "http200": 51,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 48
+            }
+          }
+        }
+      },
+      "pairedDifferences": [
+        {
+          "a": "openai-gpt-4.1-mini",
+          "b": "openai-gpt-5.4-mini",
+          "difference": -0.01388888888888895,
+          "taskCluster95CI": [
+            -0.16666666666666663,
+            0.13888888888888895
+          ]
+        },
+        {
+          "a": "openai-gpt-4.1-mini",
+          "b": "openai-gpt-5.4",
+          "difference": -0.125,
+          "taskCluster95CI": [
+            -0.29166666666666674,
+            0.04166666666666663
+          ]
+        },
+        {
+          "a": "openai-gpt-5.4-mini",
+          "b": "openai-gpt-5.4",
+          "difference": -0.11111111111111105,
+          "taskCluster95CI": [
+            -0.26388888888888895,
+            0.04166666666666663
+          ]
+        }
+      ],
+      "sensitivity": {
+        "openai-gpt-4.1-mini": {
+          "passed": 63,
+          "attempts": 72,
+          "score": 0.875,
+          "adjusted": 6
+        },
+        "openai-gpt-5.4-mini": {
+          "passed": 62,
+          "attempts": 72,
+          "score": 0.8611111111111112,
+          "adjusted": 4
+        },
+        "openai-gpt-5.4": {
+          "passed": 66,
+          "attempts": 72,
+          "score": 0.9166666666666666,
+          "adjusted": 0
+        }
+      }
+    },
+    {
+      "campaignId": "local-model-benchmark-2026-09-24",
+      "manifestSha256": "a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814",
+      "complete": true,
+      "trialCount": 168,
+      "expectedTrials": 168,
+      "caseCount": 28,
+      "primaryCaseCount": 24,
+      "runWindow": {
+        "start": "2026-09-24T20:30:09.941Z",
+        "finish": "2026-09-24T20:46:23.774Z"
+      },
+      "models": {
+        "qwen3-14b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 51,
+            "score": 0.7083333333333334,
+            "medianSeconds": 2.9274404010000286,
+            "p90Seconds": 5.55789323619999,
+            "successfulMedianSeconds": 2.9196525699999767,
+            "medianBrowserRenderSeconds": 6.344705931999982,
+            "successWithin30s": 51,
+            "http200": 69,
+            "unintendedMutations": 3,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 51
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 9,
+            "score": 0.75,
+            "medianSeconds": 2.7445869390000004,
+            "p90Seconds": 5.3931997246000085,
+            "successfulMedianSeconds": 2.5081246920000413,
+            "medianBrowserRenderSeconds": 2.2622739814999515,
+            "successWithin30s": 9,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.5416666666666666,
+            0.875
+          ],
+          "allThreePassedCases": 17,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 9,
+              "score": 1.0,
+              "medianSeconds": 5.162287796999968,
+              "p90Seconds": 5.626883572199987,
+              "successfulMedianSeconds": 5.162287796999968,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 9,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 2.8965880950000136,
+              "p90Seconds": 2.9483026352000423,
+              "successfulMedianSeconds": 2.8965880950000136,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 15,
+              "score": 0.5555555555555556,
+              "medianSeconds": 3.116955152999959,
+              "p90Seconds": 6.243789973800039,
+              "successfulMedianSeconds": 4.756395128999953,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 27,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 0,
+              "score": 0.0,
+              "medianSeconds": 3.6049991549999976,
+              "p90Seconds": 5.621134743000031,
+              "successfulMedianSeconds": null,
+              "medianBrowserRenderSeconds": 4.510612665500027,
+              "successWithin30s": 0,
+              "http200": 6,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 0
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 12,
+              "score": 0.8,
+              "medianSeconds": 2.5275314209999924,
+              "p90Seconds": 4.794682656800002,
+              "successfulMedianSeconds": 2.501770459499967,
+              "medianBrowserRenderSeconds": 6.344705931999982,
+              "successWithin30s": 12,
+              "http200": 12,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 12,
+              "score": 0.5714285714285714,
+              "medianSeconds": 2.5656541260000085,
+              "p90Seconds": 5.394743790000037,
+              "successfulMedianSeconds": 2.501770459499967,
+              "medianBrowserRenderSeconds": 6.344705931999982,
+              "successWithin30s": 12,
+              "http200": 18,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 12
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 39,
+              "score": 0.7647058823529411,
+              "medianSeconds": 2.976628473000019,
+              "p90Seconds": 5.559164821999992,
+              "successfulMedianSeconds": 3.4034335550000003,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 39,
+              "http200": 51,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 39
+            }
+          }
+        },
+        "gemma4-12b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 58,
+            "score": 0.8055555555555556,
+            "medianSeconds": 3.5064567094999948,
+            "p90Seconds": 6.7131226708,
+            "successfulMedianSeconds": 3.505755614000009,
+            "medianBrowserRenderSeconds": 6.299786679000012,
+            "successWithin30s": 58,
+            "http200": 66,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 60
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 3.1838302420000257,
+            "p90Seconds": 6.418041855400012,
+            "successfulMedianSeconds": 3.1838302420000257,
+            "medianBrowserRenderSeconds": 2.7297386354999906,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.6388888888888888,
+            0.9583333333333334
+          ],
+          "allThreePassedCases": 19,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 7,
+              "score": 0.7777777777777778,
+              "medianSeconds": 6.735401549000002,
+              "p90Seconds": 7.2021257492,
+              "successfulMedianSeconds": 6.512612766999984,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 7,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 3.5059188500000165,
+              "p90Seconds": 3.697049485999951,
+              "successfulMedianSeconds": 3.5059188500000165,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 18,
+              "score": 0.6666666666666666,
+              "medianSeconds": 4.603302968000004,
+              "p90Seconds": 6.551051304000004,
+              "successfulMedianSeconds": 4.12468189800001,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 18,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 18
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 3,
+              "score": 0.5,
+              "medianSeconds": 2.885679726000002,
+              "p90Seconds": 3.2303467079999972,
+              "successfulMedianSeconds": 2.895325176000013,
+              "medianBrowserRenderSeconds": 2.8916642684999387,
+              "successWithin30s": 3,
+              "http200": 6,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 3
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 3.0636935100000118,
+              "p90Seconds": 3.309075523000014,
+              "successfulMedianSeconds": 3.0636935100000118,
+              "medianBrowserRenderSeconds": 6.885721031000023,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 18,
+              "score": 0.8571428571428571,
+              "medianSeconds": 2.9917614899999463,
+              "p90Seconds": 3.3617374150000034,
+              "successfulMedianSeconds": 3.0443132680000273,
+              "medianBrowserRenderSeconds": 6.299786679000012,
+              "successWithin30s": 18,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 18
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 40,
+              "score": 0.7843137254901961,
+              "medianSeconds": 3.807685325999977,
+              "p90Seconds": 7.100335545000002,
+              "successfulMedianSeconds": 3.6333863349999955,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 40,
+              "http200": 45,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 42
+            }
+          }
+        }
+      },
+      "pairedDifferences": [
+        {
+          "a": "qwen3-14b",
+          "b": "gemma4-12b",
+          "difference": -0.09722222222222221,
+          "taskCluster95CI": [
+            -0.29166666666666663,
+            0.08333333333333337
+          ]
+        }
+      ],
+      "sensitivity": {
+        "qwen3-14b": {
+          "passed": 57,
+          "attempts": 72,
+          "score": 0.7916666666666666,
+          "adjusted": 6
+        },
+        "gemma4-12b": {
+          "passed": 61,
+          "attempts": 72,
+          "score": 0.8472222222222222,
+          "adjusted": 3
+        }
+      }
+    },
+    {
+      "campaignId": "qwen-newer-benchmark-2026-09-29",
+      "manifestSha256": "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863",
+      "complete": true,
+      "trialCount": 168,
+      "expectedTrials": 168,
+      "caseCount": 28,
+      "primaryCaseCount": 24,
+      "runWindow": {
+        "start": "2026-09-29T14:17:05.362Z",
+        "finish": "2026-09-29T14:50:59.626Z"
+      },
+      "models": {
+        "qwen3-14b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 49,
+            "score": 0.6805555555555556,
+            "medianSeconds": 3.7694419800000034,
+            "p90Seconds": 7.1976418324999685,
+            "successfulMedianSeconds": 3.751189255999983,
+            "medianBrowserRenderSeconds": 8.700673519999953,
+            "successWithin30s": 49,
+            "http200": 69,
+            "unintendedMutations": 3,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 50
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 9,
+            "score": 0.75,
+            "medianSeconds": 3.446301325999899,
+            "p90Seconds": 7.6061608038999795,
+            "successfulMedianSeconds": 3.2823032660000027,
+            "medianBrowserRenderSeconds": 3.071773517500027,
+            "successWithin30s": 9,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.5,
+            0.8472222222222222
+          ],
+          "allThreePassedCases": 15,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 8,
+              "score": 0.8888888888888888,
+              "medianSeconds": 7.2334165209999775,
+              "p90Seconds": 8.562609134800033,
+              "successfulMedianSeconds": 7.1578098569999895,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 8,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 3.6478518789999654,
+              "p90Seconds": 3.8275310911999783,
+              "successfulMedianSeconds": 3.6478518789999654,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 15,
+              "score": 0.5555555555555556,
+              "medianSeconds": 3.9622587960000093,
+              "p90Seconds": 6.144651125200096,
+              "successfulMedianSeconds": 4.616851117000216,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 27,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 0,
+              "score": 0.0,
+              "medianSeconds": 4.648284433999914,
+              "p90Seconds": 6.491779427499976,
+              "successfulMedianSeconds": null,
+              "medianBrowserRenderSeconds": 5.807624936500041,
+              "successWithin30s": 0,
+              "http200": 6,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 0
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 11,
+              "score": 0.7333333333333333,
+              "medianSeconds": 3.333723326000036,
+              "p90Seconds": 6.706701454999997,
+              "successfulMedianSeconds": 3.3007314589999153,
+              "medianBrowserRenderSeconds": 9.17371407799999,
+              "successWithin30s": 11,
+              "http200": 12,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 11
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 11,
+              "score": 0.5238095238095238,
+              "medianSeconds": 3.333723326000036,
+              "p90Seconds": 6.703392244999995,
+              "successfulMedianSeconds": 3.3007314589999153,
+              "medianBrowserRenderSeconds": 8.700673519999953,
+              "successWithin30s": 11,
+              "http200": 18,
+              "unintendedMutations": 3,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 11
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 38,
+              "score": 0.7450980392156863,
+              "medianSeconds": 3.891959869999904,
+              "p90Seconds": 7.249395029000007,
+              "successfulMedianSeconds": 3.898993497499905,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 38,
+              "http200": 51,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 39
+            }
+          }
+        },
+        "qwen3.8-27b": {
+          "primary": {
+            "attempts": 72,
+            "passed": 63,
+            "score": 0.875,
+            "medianSeconds": 14.499975249999988,
+            "p90Seconds": 29.811429448000034,
+            "successfulMedianSeconds": 14.503203278,
+            "medianBrowserRenderSeconds": 15.500085097000003,
+            "successWithin30s": 55,
+            "http200": 69,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 63
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 11.103158301999969,
+            "p90Seconds": 28.28906829400007,
+            "successfulMedianSeconds": 11.103158301999969,
+            "medianBrowserRenderSeconds": 6.61881010900007,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.75,
+            1.0
+          ],
+          "allThreePassedCases": 21,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 9,
+              "score": 1.0,
+              "medianSeconds": 32.191430819999894,
+              "p90Seconds": 35.33003290699995,
+              "successfulMedianSeconds": 32.191430819999894,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 1,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 16.102500522000017,
+              "p90Seconds": 17.03630198200005,
+              "successfulMedianSeconds": 16.102500522000017,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 18,
+              "score": 0.6666666666666666,
+              "medianSeconds": 13.900111583999998,
+              "p90Seconds": 16.51622565920009,
+              "successfulMedianSeconds": 13.85673162149999,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 18,
+              "http200": 24,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 18
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 6,
+              "score": 1.0,
+              "medianSeconds": 6.772123703500023,
+              "p90Seconds": 6.9437971764999675,
+              "successfulMedianSeconds": 6.772123703500023,
+              "medianBrowserRenderSeconds": 6.78125189450002,
+              "successWithin30s": 6,
+              "http200": 6,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 6
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 9.17090479500004,
+              "p90Seconds": 15.445411709999945,
+              "successfulMedianSeconds": 9.17090479500004,
+              "medianBrowserRenderSeconds": 15.926133635999983,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 21,
+              "score": 1.0,
+              "medianSeconds": 8.12159668399999,
+              "p90Seconds": 15.360250617000041,
+              "successfulMedianSeconds": 8.12159668399999,
+              "medianBrowserRenderSeconds": 15.500085097000003,
+              "successWithin30s": 21,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 21
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 42,
+              "score": 0.8235294117647058,
+              "medianSeconds": 15.437889284000034,
+              "p90Seconds": 31.578056339000003,
+              "successfulMedianSeconds": 15.676429149999981,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 34,
+              "http200": 48,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 42
+            }
+          }
+        }
+      },
+      "pairedDifferences": [
+        {
+          "a": "qwen3-14b",
+          "b": "qwen3.8-27b",
+          "difference": -0.19444444444444442,
+          "taskCluster95CI": [
+            -0.38888888888888884,
+            -0.01388888888888884
+          ]
+        }
+      ],
+      "sensitivity": {
+        "qwen3-14b": {
+          "passed": 55,
+          "attempts": 72,
+          "score": 0.7638888888888888,
+          "adjusted": 6
+        },
+        "qwen3.8-27b": {
+          "passed": 63,
+          "attempts": 72,
+          "score": 0.875,
+          "adjusted": 0
+        }
+      }
+    },
+    {
+      "campaignId": "gpt61-sol-benchmark-2026-09-29",
+      "manifestSha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77",
+      "complete": true,
+      "trialCount": 84,
+      "expectedTrials": 84,
+      "caseCount": 28,
+      "primaryCaseCount": 24,
+      "runWindow": {
+        "start": "2026-09-29T23:50:47.241Z",
+        "finish": "2026-09-29T23:58:05.681Z"
+      },
+      "models": {
+        "openai-gpt-6.1-sol": {
+          "primary": {
+            "attempts": 72,
+            "passed": 64,
+            "score": 0.8888888888888888,
+            "medianSeconds": 2.147913950999995,
+            "p90Seconds": 4.876166003500015,
+            "successfulMedianSeconds": 2.0206599739999804,
+            "medianBrowserRenderSeconds": 7.044288973000017,
+            "successWithin30s": 64,
+            "http200": 72,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 64
+          },
+          "controls": {
+            "attempts": 12,
+            "passed": 12,
+            "score": 1.0,
+            "medianSeconds": 1.9006807155000278,
+            "p90Seconds": 4.270931890600023,
+            "successfulMedianSeconds": 1.9006807155000278,
+            "medianBrowserRenderSeconds": 2.382219395500026,
+            "successWithin30s": 12,
+            "http200": 12,
+            "unintendedMutations": 0,
+            "pendingNarrative": 0,
+            "frozenGraderPass": 12
+          },
+          "taskCluster95CI": [
+            0.7635416666666669,
+            1.0
+          ],
+          "allThreePassedCases": 21,
+          "byCategory": {
+            "HIN reasoning & limits": {
+              "attempts": 9,
+              "passed": 9,
+              "score": 1.0,
+              "medianSeconds": 4.790180089000031,
+              "p90Seconds": 5.473515996999985,
+              "successfulMedianSeconds": 4.790180089000031,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 9,
+              "http200": 9,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 9
+            },
+            "HIN source queries": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 1.728377083999978,
+              "p90Seconds": 2.241375393000012,
+              "successfulMedianSeconds": 1.728377083999978,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            },
+            "Maryland data queries": {
+              "attempts": 27,
+              "passed": 19,
+              "score": 0.7037037037037037,
+              "medianSeconds": 3.6539295409999903,
+              "p90Seconds": 4.895633341600012,
+              "successfulMedianSeconds": 3.084685996000015,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 19,
+              "http200": 27,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 19
+            },
+            "UI boundaries": {
+              "attempts": 6,
+              "passed": 6,
+              "score": 1.0,
+              "medianSeconds": 1.6754811105000043,
+              "p90Seconds": 2.4967708144999925,
+              "successfulMedianSeconds": 1.6754811105000043,
+              "medianBrowserRenderSeconds": 1.6848287625000085,
+              "successWithin30s": 6,
+              "http200": 6,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 6
+            },
+            "UI filter changes": {
+              "attempts": 15,
+              "passed": 15,
+              "score": 1.0,
+              "medianSeconds": 1.8121802829999942,
+              "p90Seconds": 2.7313936624000137,
+              "successfulMedianSeconds": 1.8121802829999942,
+              "medianBrowserRenderSeconds": 7.6377495089999865,
+              "successWithin30s": 15,
+              "http200": 15,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 15
+            }
+          },
+          "byMode": {
+            "browser": {
+              "attempts": 21,
+              "passed": 21,
+              "score": 1.0,
+              "medianSeconds": 1.776185116000008,
+              "p90Seconds": 2.9276802700000117,
+              "successfulMedianSeconds": 1.776185116000008,
+              "medianBrowserRenderSeconds": 7.044288973000017,
+              "successWithin30s": 21,
+              "http200": 21,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 21
+            },
+            "api": {
+              "attempts": 51,
+              "passed": 43,
+              "score": 0.8431372549019608,
+              "medianSeconds": 3.2456189310000045,
+              "p90Seconds": 4.978795639000018,
+              "successfulMedianSeconds": 2.4170726349999896,
+              "medianBrowserRenderSeconds": null,
+              "successWithin30s": 43,
+              "http200": 51,
+              "unintendedMutations": 0,
+              "pendingNarrative": 0,
+              "frozenGraderPass": 43
+            }
+          }
+        }
+      },
+      "pairedDifferences": [],
+      "sensitivity": {
+        "openai-gpt-6.1-sol": {
+          "passed": 64,
+          "attempts": 72,
+          "score": 0.8888888888888888,
+          "adjusted": 0
+        }
+      }
+    }
+  ]
+}

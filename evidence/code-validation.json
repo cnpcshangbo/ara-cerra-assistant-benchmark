@@ -1,0 +1,47 @@
+{
+  "complete": true,
+  "python": "3.12.3",
+  "node": "v20.20.2",
+  "offlineAggregateReproduction": {
+    "campaigns": 5,
+    "attempts": 924,
+    "primaryAttempts": 792,
+    "browserAttempts": 297,
+    "narrativeReviews": 132,
+    "bootstrapDrawsPerCampaign": 10000,
+    "publicHashesChecked": 31,
+    "agreesWithArchiveAggregates": true
+  },
+  "frozenGraderSyntheticChecks": 160,
+  "overlayChecks": 8,
+  "aggregationRegressionChecks": 6,
+  "collectorStubTests": {
+    "passed": true,
+    "modelCalls": 0,
+    "checks": [
+      "dry run sends no request",
+      "loopback by default",
+      "remote opt-in",
+      "private output including symlink containment",
+      "credentials required",
+      "no raw response or cookie in stdout",
+      "feedback stripped",
+      "owner-only file permissions",
+      "existing output blocks another submission",
+      "browser cases rejected"
+    ]
+  },
+  "privateArchiveRegradeParity": {
+    "attempts": 924,
+    "receipt": "evidence/grader-export-parity.json"
+  },
+  "scopedSecretAndIdentityScan": {
+    "scope": [
+      "src/",
+      "evidence/"
+    ],
+    "knownSecretValuesCheckedInMemory": 5,
+    "findings": [],
+    "limitation": "Pattern and known-value scanning supplements manual allowlist review; it is not a guarantee against every sensitive value."
+  }
+}

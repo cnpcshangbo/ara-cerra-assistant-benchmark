@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 1,
+  "campaigns": [
+    {
+      "campaignId": "transportation-model-benchmark-2026-09-18",
+      "originalManifestSha256": "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e",
+      "originalGradedSha256": "d7c3f143cad24a15a16fa4bb194863cded0d5a4279ecc92b9bbd10b6d8b386e7",
+      "originalSummarySha256": "d2baf22c818f86e9e840dc292ad9591f1264fd2761b766f8901a2c150359a118",
+      "seed": 20260918,
+      "repetitions": 3,
+      "models": [
+        "qwen3-8b",
+        "llama3.1-8b",
+        "gemma3-4b"
+      ],
+      "runWindow": {
+        "start": "2026-09-19T03:35:13.887Z",
+        "finish": "2026-09-19T03:56:15.466Z"
+      },
+      "expectedTrials": 252,
+      "caseOrder": [
+        {
+          "id": "MD01",
+          "label": "MD01",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD02",
+          "label": "MD02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD03",
+          "label": "MD03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD04",
+          "label": "MD04",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD05",
+          "label": "MD05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD06",
+          "label": "MD06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD07",
+          "label": "MD07",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD08",
+          "label": "MD08",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD09",
+          "label": "MD09",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD10",
+          "label": "MD10",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD11",
+          "label": "MD11",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD12",
+          "label": "MD12",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD15",
+          "label": "MD15",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD17",
+          "label": "MD17",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV01",
+          "label": "RV01",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV02",
+          "label": "RV02",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-02-half-mile-fatalities",
+          "label": "HIN02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-03-intersection-tier-two",
+          "label": "HIN03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-05-tract-context",
+          "label": "HIN05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-06-chinese-global-count",
+          "label": "HIN06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-10-bilingual-followup",
+          "label": "HIN10",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-12-source-conflicts",
+          "label": "HIN12",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-13-current-risk-refusal",
+          "label": "HIN13",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-14-treatment-causality-refusal",
+          "label": "HIN14",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD16",
+          "label": "MD16",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "MD18",
+          "label": "MD18",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-01-ui-one-mile-rank",
+          "label": "HIN01",
+          "split": "control",
+          "mode": "api"
+        },
+        {
+          "id": "hin-11-scoring-method",
+          "label": "HIN11",
+          "split": "control",
+          "mode": "api"
+        }
+      ],
+      "execution": "Production"
+    },
+    {
+      "campaignId": "transportation-gpt-benchmark-2026-09-23",
+      "originalManifestSha256": "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb",
+      "originalGradedSha256": "75ed6b97ac3844001974f84a26c2776f5285847a7780dc05f7f87096fb405ba0",
+      "originalSummarySha256": "5d3f1255ad524f36df40050cff38e44aa873aca73454fe4b4440f9bb0d146d22",
+      "seed": 20260918,
+      "repetitions": 3,
+      "models": [
+        "openai-gpt-4.1-mini",
+        "openai-gpt-5.4-mini",
+        "openai-gpt-5.4"
+      ],
+      "runWindow": {
+        "start": "2026-09-24T01:46:05.455Z",
+        "finish": "2026-09-24T02:00:40.924Z"
+      },
+      "expectedTrials": 252,
+      "caseOrder": [
+        {
+          "id": "MD01",
+          "label": "MD01",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD02",
+          "label": "MD02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD03",
+          "label": "MD03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD04",
+          "label": "MD04",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD05",
+          "label": "MD05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD06",
+          "label": "MD06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD07",
+          "label": "MD07",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD08",
+          "label": "MD08",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD09",
+          "label": "MD09",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD10",
+          "label": "MD10",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD11",
+          "label": "MD11",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD12",
+          "label": "MD12",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD15",
+          "label": "MD15",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD17",
+          "label": "MD17",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV01",
+          "label": "RV01",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV02",
+          "label": "RV02",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-02-half-mile-fatalities",
+          "label": "HIN02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-03-intersection-tier-two",
+          "label": "HIN03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-05-tract-context",
+          "label": "HIN05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-06-chinese-global-count",
+          "label": "HIN06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-10-bilingual-followup",
+          "label": "HIN10",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-12-source-conflicts",
+          "label": "HIN12",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-13-current-risk-refusal",
+          "label": "HIN13",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-14-treatment-causality-refusal",
+          "label": "HIN14",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD16",
+          "label": "MD16",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "MD18",
+          "label": "MD18",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-01-ui-one-mile-rank",
+          "label": "HIN01",
+          "split": "control",
+          "mode": "api"
+        },
+        {
+          "id": "hin-11-scoring-method",
+          "label": "HIN11",
+          "split": "control",
+          "mode": "api"
+        }
+      ],
+      "execution": "Production"
+    },
+    {
+      "campaignId": "local-model-benchmark-2026-09-24",
+      "originalManifestSha256": "a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814",
+      "originalGradedSha256": "525413514c3f82cdb2e9de33d08313f2898ccf5c0b501cd1d5a40de7262228bd",
+      "originalSummarySha256": "cfac5c01dfa2e837170dd153ac457326e54d5090182bb729e6e9c0f61118d99c",
+      "seed": 20260918,
+      "repetitions": 3,
+      "models": [
+        "qwen3-14b",
+        "gemma4-12b"
+      ],
+      "runWindow": {
+        "start": "2026-09-24T20:30:09.941Z",
+        "finish": "2026-09-24T20:46:23.774Z"
+      },
+      "expectedTrials": 168,
+      "caseOrder": [
+        {
+          "id": "MD01",
+          "label": "MD01",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD02",
+          "label": "MD02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD03",
+          "label": "MD03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD04",
+          "label": "MD04",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD05",
+          "label": "MD05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD06",
+          "label": "MD06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD07",
+          "label": "MD07",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD08",
+          "label": "MD08",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD09",
+          "label": "MD09",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD10",
+          "label": "MD10",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD11",
+          "label": "MD11",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD12",
+          "label": "MD12",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD15",
+          "label": "MD15",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD17",
+          "label": "MD17",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV01",
+          "label": "RV01",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV02",
+          "label": "RV02",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-02-half-mile-fatalities",
+          "label": "HIN02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-03-intersection-tier-two",
+          "label": "HIN03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-05-tract-context",
+          "label": "HIN05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-06-chinese-global-count",
+          "label": "HIN06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-10-bilingual-followup",
+          "label": "HIN10",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-12-source-conflicts",
+          "label": "HIN12",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-13-current-risk-refusal",
+          "label": "HIN13",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-14-treatment-causality-refusal",
+          "label": "HIN14",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD16",
+          "label": "MD16",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "MD18",
+          "label": "MD18",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-01-ui-one-mile-rank",
+          "label": "HIN01",
+          "split": "control",
+          "mode": "api"
+        },
+        {
+          "id": "hin-11-scoring-method",
+          "label": "HIN11",
+          "split": "control",
+          "mode": "api"
+        }
+      ],
+      "execution": "Production"
+    },
+    {
+      "campaignId": "qwen-newer-benchmark-2026-09-29",
+      "originalManifestSha256": "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863",
+      "originalGradedSha256": "6c89a871db64b4359ff0960f0c3d6cc827966d9e7b64b403f0950a7b721d4bbe",
+      "originalSummarySha256": "c5b2365345777b3e8e72ea9847272453a94d6a3a6bd16b2e8964b64ee48ed5a4",
+      "seed": 20260918,
+      "repetitions": 3,
+      "models": [
+        "qwen3-14b",
+        "qwen3.8-27b"
+      ],
+      "runWindow": {
+        "start": "2026-09-29T14:17:05.362Z",
+        "finish": "2026-09-29T14:50:59.626Z"
+      },
+      "expectedTrials": 168,
+      "caseOrder": [
+        {
+          "id": "MD01",
+          "label": "MD01",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD02",
+          "label": "MD02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD03",
+          "label": "MD03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD04",
+          "label": "MD04",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD05",
+          "label": "MD05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD06",
+          "label": "MD06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD07",
+          "label": "MD07",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD08",
+          "label": "MD08",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD09",
+          "label": "MD09",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD10",
+          "label": "MD10",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD11",
+          "label": "MD11",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD12",
+          "label": "MD12",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD15",
+          "label": "MD15",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD17",
+          "label": "MD17",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV01",
+          "label": "RV01",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV02",
+          "label": "RV02",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-02-half-mile-fatalities",
+          "label": "HIN02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-03-intersection-tier-two",
+          "label": "HIN03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-05-tract-context",
+          "label": "HIN05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-06-chinese-global-count",
+          "label": "HIN06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-10-bilingual-followup",
+          "label": "HIN10",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-12-source-conflicts",
+          "label": "HIN12",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-13-current-risk-refusal",
+          "label": "HIN13",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-14-treatment-causality-refusal",
+          "label": "HIN14",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD16",
+          "label": "MD16",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "MD18",
+          "label": "MD18",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-01-ui-one-mile-rank",
+          "label": "HIN01",
+          "split": "control",
+          "mode": "api"
+        },
+        {
+          "id": "hin-11-scoring-method",
+          "label": "HIN11",
+          "split": "control",
+          "mode": "api"
+        }
+      ],
+      "execution": "Frozen local app / local models"
+    },
+    {
+      "campaignId": "gpt61-sol-benchmark-2026-09-29",
+      "originalManifestSha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77",
+      "originalGradedSha256": "3279d285555d540f23eba826947fd3b7fafaf95dad30a15fa6454188ad203f72",
+      "originalSummarySha256": "57a2d7ba58c9a300b479a6e30b76cf46e573fb2af9b426c5682dece191d417aa",
+      "seed": 20260918,
+      "repetitions": 3,
+      "models": [
+        "openai-gpt-6.1-sol"
+      ],
+      "runWindow": {
+        "start": "2026-09-29T23:50:47.241Z",
+        "finish": "2026-09-29T23:58:05.681Z"
+      },
+      "expectedTrials": 84,
+      "caseOrder": [
+        {
+          "id": "MD01",
+          "label": "MD01",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD02",
+          "label": "MD02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD03",
+          "label": "MD03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD04",
+          "label": "MD04",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD05",
+          "label": "MD05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD06",
+          "label": "MD06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD07",
+          "label": "MD07",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD08",
+          "label": "MD08",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD09",
+          "label": "MD09",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD10",
+          "label": "MD10",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD11",
+          "label": "MD11",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD12",
+          "label": "MD12",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD15",
+          "label": "MD15",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "MD17",
+          "label": "MD17",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV01",
+          "label": "RV01",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "RV02",
+          "label": "RV02",
+          "split": "primary",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-02-half-mile-fatalities",
+          "label": "HIN02",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-03-intersection-tier-two",
+          "label": "HIN03",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-05-tract-context",
+          "label": "HIN05",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-06-chinese-global-count",
+          "label": "HIN06",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-10-bilingual-followup",
+          "label": "HIN10",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-12-source-conflicts",
+          "label": "HIN12",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-13-current-risk-refusal",
+          "label": "HIN13",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "hin-14-treatment-causality-refusal",
+          "label": "HIN14",
+          "split": "primary",
+          "mode": "api"
+        },
+        {
+          "id": "MD16",
+          "label": "MD16",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "MD18",
+          "label": "MD18",
+          "split": "control",
+          "mode": "browser"
+        },
+        {
+          "id": "hin-01-ui-one-mile-rank",
+          "label": "HIN01",
+          "split": "control",
+          "mode": "api"
+        },
+        {
+          "id": "hin-11-scoring-method",
+          "label": "HIN11",
+          "split": "control",
+          "mode": "api"
+        }
+      ],
+      "execution": "Frozen local app / API"
+    }
+  ]
+}

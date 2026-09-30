@@ -1,0 +1,214 @@
+title: CERRA Assistant Benchmark — scoped research trajectory
+compilation:
+  mode: post-hoc compilation from recorded scientific artifacts
+  compiled_at: '2026-09-30T00:33:07.868617+00:00'
+  original_event_timestamps: Campaign nodes use actual retained run-window finish times; correction uses recorded
+    correction timestamp. Missing original decision times are omitted, not fabricated.
+  scope: Only benchmark design, results, adjudication and interpretation. Unrelated private research and operational
+    history excluded.
+  original_pdf_sha256: cbb6d45e6e6dbf9619527b16a530af897a9d0534a6515dd872fb55eaf9460217
+  no_prospective_hypotheses_invented: true
+tree:
+- id: N01
+  type: question
+  title: What makes an analytical assistant correct?
+  support_level: explicit
+  description: The study asks how configured assistants perform when success requires source use, task intent,
+    narrative qualifications and actual interface effects together; how a local accuracy gain relates to latency
+    and repetition; and which distinctions a single strict score hides. This question structure is reconstructed
+    from the paper, not recorded as an external preregistration.
+  evidence:
+  - C01
+  - C02
+  - C03
+  source_refs:
+  - paper/source/main.tex:Introduction
+  children:
+  - id: N02
+    type: decision
+    title: Define workflow checks and retain controls separately
+    support_level: explicit
+    choice: Freeze task prompts, canonical context, operation/scope, source evidence, propositions and permitted
+      state effects. Evaluate application outcomes and exclude previously shown or deterministic controls from
+      the primary score.
+    evidence:
+    - C01
+    - C02
+    - C06
+    source_refs:
+    - paper/source/main.tex:Tasks, Oracles, and Metrics
+    - benchmark/scoring-contract.json
+    alternatives:
+    - Using response text or HTTP completion alone would omit interface and source-scope checks; this is the
+      paper’s methodological contrast, not a newly invented pilot.
+    children:
+    - id: N03
+      type: experiment
+      title: Observe three deployed local configurations
+      support_level: explicit
+      result: The initial campaign retains 252 application attempts. An aggregation layer added after the written
+        freeze enforces pre-existing model-identity and browser-evidence requirements; original and protocol
+        grades are preserved. Functional equivalence is a post-hoc diagnostic, kept separate from strict success.
+      evidence:
+      - C01
+      - C02
+      - C06
+      source_refs:
+      - evidence/campaigns.json
+      - evidence/expected-aggregates.json
+      - evidence/evaluated-records.json
+      timestamp: '2026-09-19T03:56:15.466Z'
+      run_window:
+        start: '2026-09-19T03:35:13.887Z'
+        finish: '2026-09-19T03:56:15.466Z'
+      original_manifest_sha256: a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e
+      campaign_id: transportation-model-benchmark-2026-09-18
+    - id: N04
+      type: experiment
+      title: Extend the same suite to deployed API configurations
+      support_level: explicit
+      result: The historical API campaign retains 252 attempts. It reuses the task suite while recording a
+        different deployment and remote inference route. Scores provide application context, not a controlled
+        comparison with the earlier local engines.
+      evidence:
+      - C01
+      - C06
+      source_refs:
+      - evidence/campaigns.json
+      - evidence/expected-aggregates.json
+      - evidence/evaluated-records.json
+      timestamp: '2026-09-24T02:00:40.924Z'
+      run_window:
+        start: '2026-09-24T01:46:05.455Z'
+        finish: '2026-09-24T02:00:40.924Z'
+      original_manifest_sha256: 9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb
+      campaign_id: transportation-gpt-benchmark-2026-09-23
+    - id: N05
+      type: experiment
+      title: Evaluate two additional local configurations
+      support_level: explicit
+      result: The campaign retains 168 attempts. Final audited scores separate strict behavior, supported filters
+        and observed state changes. The initial deployment label is corrected by retained provenance; task
+        responses and source snapshots are not replaced.
+      evidence:
+      - C01
+      - C02
+      - C06
+      source_refs:
+      - evidence/campaigns.json
+      - evidence/expected-aggregates.json
+      - evidence/evaluated-records.json
+      timestamp: '2026-09-24T20:46:23.774Z'
+      run_window:
+        start: '2026-09-24T20:30:09.941Z'
+        finish: '2026-09-24T20:46:23.774Z'
+      original_manifest_sha256: a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814
+      campaign_id: local-model-benchmark-2026-09-24
+      children:
+      - id: N06
+        type: dead_end
+        title: An incomplete narrative review packet misstates the rubric
+        support_level: explicit
+        failure_mode: The first packet omits original scoring qualifications and treats every proposition as
+          mandatory. These judgments are not used as the final audited record.
+        evidence:
+        - C05
+        source_refs:
+        - logic/solution/audit-history.md:Narrative packet correction
+        hypothesis: No prospective hypothesis was stated. This was an attempted adjudication route whose incomplete
+          guidance was later discovered.
+        lesson: A blinded reviewer still needs complete original requirements and optionality; retain the initial
+          review and disclose correction instead of silently replacing its history.
+      - id: N07
+        type: decision
+        title: Restore complete guidance and re-review unchanged answers
+        support_level: explicit
+        choice: All 24 identity-blind records are re-reviewed with the full frozen notes and anonymous historical
+          calibration. Fifteen decisions change. Initial judgments remain preserved; no response is regenerated
+          and no oracle is changed.
+        evidence:
+        - C05
+        source_refs:
+        - logic/solution/audit-history.md:September 24 correction receipt
+        timestamp: '2026-09-24T20:54:50.118177+00:00'
+        alternatives:
+        - Publish the stricter incomplete-packet judgments.
+    - id: N08
+      type: experiment
+      title: Run a contemporaneous local Qwen comparison
+      support_level: explicit
+      result: The paired run retains 168 outcomes, 54 browser records and 24 narrative reviews. Strict success
+        rises from 49/72 to 63/72, while median request time rises from 3.77 to 14.50 seconds. Shared hardware
+        does not remove differences in size and observed CPU offload.
+      evidence:
+      - C02
+      - C03
+      - C06
+      source_refs:
+      - evidence/campaigns.json
+      - evidence/expected-aggregates.json
+      - evidence/evaluated-records.json
+      timestamp: '2026-09-29T14:50:59.626Z'
+      run_window:
+        start: '2026-09-29T14:17:05.362Z'
+        finish: '2026-09-29T14:50:59.626Z'
+      original_manifest_sha256: a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863
+      campaign_id: qwen-newer-benchmark-2026-09-29
+      also_depends_on:
+      - N07
+      children:
+      - id: N09
+        type: decision
+        title: Balance the local default against response time
+        support_level: explicit
+        choice: The deployment chooses Gemma 4 12B as a practical local default and offers the larger Qwen
+          configuration optionally. Historical observations inform this operational choice, but no contemporaneous
+          Gemma–Qwen3.8 comparison, measured utility function or user-tolerance study establishes an optimum.
+        evidence:
+        - C03
+        - C06
+        source_refs:
+        - paper/source/main.tex:Deployment selection is a policy choice
+        alternatives:
+        - Select the larger Qwen configuration by strict score alone.
+    - id: N10
+      type: experiment
+      title: Add a separate hosted API observation
+      support_level: explicit
+      result: The API extension retains 84 attempts with unchanged tasks and written scoring. All requests
+        return HTTP 200, yet only 64/72 primary attempts pass. The distinct local-application/API route and
+        lack of a contemporaneous comparator prevent an isolated model ranking.
+      evidence:
+      - C01
+      - C06
+      source_refs:
+      - evidence/campaigns.json
+      - evidence/expected-aggregates.json
+      - evidence/evaluated-records.json
+      timestamp: '2026-09-29T23:58:05.681Z'
+      run_window:
+        start: '2026-09-29T23:50:47.241Z'
+        finish: '2026-09-29T23:58:05.681Z'
+      original_manifest_sha256: b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77
+      campaign_id: gpt61-sol-benchmark-2026-09-29
+      also_depends_on:
+      - N07
+    - id: N11
+      type: experiment
+      title: Audit what the shared failures actually mean
+      support_level: explicit
+      result: The audit identifies a confirmed shared visibility-keyword scope override on MD01, an implicit
+        annual-row requirement on MD04, and a requested but premature year change under MD17’s clarify-first
+        policy. Missing raw planner intermediates limit model attribution. Frozen scores stay unchanged; these
+        issues are exposed for question-design review.
+      evidence:
+      - C02
+      - C04
+      - C07
+      source_refs:
+      - logic/solution/audit-history.md
+      - src/artifacts.md
+      - review/task-review.md
+      also_depends_on:
+      - N08
+      - N10

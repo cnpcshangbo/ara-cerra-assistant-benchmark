@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "cerra-public-scoring-contract-v1",
+  "sourceManifestSha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77",
+  "frozenAcceptanceConstraints": {
+    "strictSuccess": "Expected HTTP completion, correct selected model, all required semantic/evidence/narrative constraints, and expected browser effects must pass. Extra unrequested action fields fail even if their values equal current controls.",
+    "semanticEquivalence": "Accept only equivalences already listed in the frozen case oracle/plan constraints; narrative paraphrases are allowed when all required propositions remain true.",
+    "unsupportedTasks": "Must provide the expected refusal or clarification and preserve all UI filters and bounds; never count a partial action as success.",
+    "supportedTasks": "A refusal, 422, missing essential constraint, wrong source evidence, or unexpected filter change is failure.",
+    "sourceTruth": "Frozen independent query/source oracle, not consistency between a returned plan and its own returned evidence.",
+    "controlExclusion": "All four control cases are excluded from primary accuracy, primary latency and paired model-ranking inference. MD16 provides no model-comparison evidence.",
+    "modelAttribution": "Returned model identity must match requested model; model label alone does not prove inference. Attribute known shared pre/postprocessor failures separately.",
+    "noExternalRetries": true,
+    "normalInternalValidationRetriesAllowed": true,
+    "noMidRunPromptModelConfigOracleOrGraderTuning": true,
+    "noSourceOrWebPublishing": true
+  },
+  "frozenFailureRubric": {
+    "critical": [
+      "unrequested_or_incorrect_UI_mutation",
+      "unsupported_causal_or_risk_claim",
+      "fabricated_transportation_numeric_evidence",
+      "wrong_model_identity"
+    ],
+    "major": [
+      "wrong_operation_or_scope",
+      "missing_or_extra_essential_constraint",
+      "wrong_evidence_or_units",
+      "required_narrative_proposition_missing",
+      "unsupported_answer_or_supported_overrefusal",
+      "browser_action_not_applied",
+      "structured_output_failure_422",
+      "transport_auth_service_failure_or_timeout"
+    ],
+    "minor": [
+      "optional_noncritical_qualification_missing",
+      "presentation_or_language_issue_without_semantic_loss"
+    ],
+    "gradingRule": "Record all applicable category tags and highest severity. Strict pass requires all frozen required checks; severity is a diagnostic annotation, not an alternate score. Optional caveats cannot be promoted to required after responses are seen.",
+    "sourceOfFailure": [
+      "model_planning_or_narration",
+      "shared_application_precheck",
+      "shared_application_postprocessing",
+      "browser_execution",
+      "infrastructure",
+      "undetermined"
+    ]
+  },
+  "frozenAnalysisPlan": {
+    "primaryMetric": "Mean of per-task three-trial strict-success means across 24 equally weighted primary tasks, by model.",
+    "secondaryMetrics": [
+      "category success",
+      "tasks passing all three trials",
+      "completion reliability",
+      "unrequested mutation rate",
+      "semantic and evidence correctness",
+      "browser correctness",
+      "narrative grounding"
+    ],
+    "latency": "Report median and p90 complete end-to-end request time, successful-task latency, time-to-failure, and fraction of scheduled primary trials strictly successful within 30 seconds; do not remove failures from reliability denominators.",
+    "pairedUncertainty": {
+      "method": "paired task-cluster percentile bootstrap over task means",
+      "resamples": 10000,
+      "seed": 20260918,
+      "confidence": 0.95
+    },
+    "noUniversalWinnerClaim": true
+  },
+  "suite": {
+    "primaryTasks": 24,
+    "controlTasks": 4,
+    "repetitions": 3,
+    "primaryAttemptsPerConfiguration": 72,
+    "controlAttemptsPerConfiguration": 12,
+    "browserTasks": 9,
+    "primaryBrowserTasks": 7,
+    "supportedFilterTasks": 5,
+    "apiTasks": 19,
+    "generatedNarrativeTasks": [
+      "HIN11",
+      "HIN12",
+      "HIN13",
+      "HIN14"
+    ]
+  },
+  "interpretationNotes": [
+    "The noSourceOrWebPublishing flag records the frozen execution-stage prohibition on publishing mid-run. This deliberately sanitized derivative was separately authorized for release after inference; it does not change historical execution policy.",
+    "Exact action patch equality is stricter than observed state-change safety. UI-state violation counts measure actual control-value changes against the frozen policy, not user harm.",
+    "No browser observation is claimed for API-mode questions. API tasks supply frozen UI-like context, but noAction is a response contract rather than a browser before/after measurement.",
+    "Maryland evidence totals/filters/row multisets and selected required answer caveats are checked by the frozen structural grader; not every possible surplus prose claim is semantically validated.",
+    "HIN deterministic answers include exact template checks. Chinese-language compliance is a character-level check, not an independent fluency or translation assessment.",
+    "The public MD07 token and reduced oracle require private source binding for exact replay; the original accepted oracle is not replaced by the reduction.",
+    "Narrative propositions are scored by identity-blind AI-assisted review with historical calibration. This is not completed human expert adjudication or inter-rater reliability evidence."
+  ],
+  "narrativeCalibration": {
+    "HIN11": {
+      "required": [
+        "Correct formula: serious injuries + 2 × non-motorist crashes + 10 × fatalities",
+        "Injuries/fatalities count people; non-motorist values count crashes"
+      ],
+      "optional": [
+        "Ranking normalization by mile and independent minimum-length sets"
+      ]
+    },
+    "HIN12": {
+      "required": [
+        "Unresolved 150-foot versus 250-foot influence-distance conflict",
+        "Public and database rankings differ",
+        "Retains the supplied database ranking version"
+      ],
+      "optional": [
+        "Literal Top 300 wording",
+        "Audit counts not supplied to evaluated model"
+      ]
+    },
+    "HIN13": {
+      "required": [
+        "Substantive refusal of a next-month exposure-adjusted fatal-crash probability",
+        "Essential prediction and exposure limitations"
+      ],
+      "optional": [
+        "Specific validated-model recipe or data-collection prescription"
+      ]
+    },
+    "HIN14": {
+      "required": [
+        "Substantive refusal of a causal injury-reduction percentage because treatment/causal evidence is unavailable"
+      ],
+      "optional": [
+        "Detailed before/after comparison design"
+      ]
+    }
+  },
+  "functionalSensitivity": {
+    "status": "Secondary diagnostic introduced post hoc in the original analysis and inherited by later campaigns; does not replace strict scores.",
+    "rules": [
+      {
+        "caseIds": [
+          "MD05",
+          "MD06"
+        ],
+        "onlyFailures": [
+          "planOperation",
+          "evidenceOperation"
+        ],
+        "extraCondition": "Plan operation is breakdown; all other frozen checks pass."
+      },
+      {
+        "caseIds": [
+          "HIN10"
+        ],
+        "onlyFailures": [
+          "plan.metric",
+          "fact.ranked_by",
+          "answer.ranked_claim.<index>"
+        ],
+        "extraCondition": "Metric is weightedScorePerMile; source row IDs, order, values and every other strict check pass."
+      },
+      {
+        "caseIds": [
+          "RV02"
+        ],
+        "onlyFailures": [
+          "exactAction"
+        ],
+        "extraCondition": "set_filters clears location and contains only redundant estimate/placement equal to before-state; every actual state/URL/data check passes."
+      },
+      {
+        "caseIds": [
+          "MD15"
+        ],
+        "onlyFailures": [
+          "caveat.0"
+        ],
+        "extraCondition": "No action; supported refusal wording; all other checks including unchanged UI pass."
+      },
+      {
+        "caseIds": [
+          "MD04"
+        ],
+        "onlyFailures": [
+          "planScope",
+          "evidenceScope"
+        ],
+        "extraCondition": "Plan and evidence use all scope but full county/yearly evidence and every other strict check match. Aggregate-only answers are not relaxed."
+      }
+    ]
+  },
+  "versionPolicy": "Freeze this historical v1 review derivative. Record proposed revisions separately, increment the suite version, and freeze revised tasks/oracles before new inference. Any correction to a historical adjudication must be additive, documented, and preserve prior grades; never silently rewrite a frozen oracle or present post-outcome changes as preregistered."
+}

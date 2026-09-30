@@ -1,0 +1,14 @@
+{
+  "complete": true,
+  "attemptsRegraded": 924,
+  "comparedFields": [
+    "originalFrozenGrade",
+    "protocolGrade",
+    "strictPass",
+    "pendingNarrativeReview",
+    "unintendedMutation",
+    "sensitivity"
+  ],
+  "publicWrapper": "src/grade-response.mjs",
+  "source": "Original private case objects and graded responses; no trial response copied to public receipt."
+}

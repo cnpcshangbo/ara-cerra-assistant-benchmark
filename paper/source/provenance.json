@@ -1,0 +1,464 @@
+{
+  "schema_version": 2,
+  "scope": "Publication-safe aggregate provenance. Original audit records are retained separately; their contents are not bundled here.",
+  "campaigns": [
+    {
+      "campaign_id": "transportation-model-benchmark-2026-09-18",
+      "campaign_label": "2026-09-18 / Production site",
+      "local_date": "2026-09-18",
+      "execution_path": "Production site",
+      "manifest_sha256": "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e",
+      "summary_sha256": "d2baf22c818f86e9e840dc292ad9591f1264fd2761b766f8901a2c150359a118",
+      "summary_complete": true,
+      "verification_passed": true,
+      "scheduled_application_attempts": 252,
+      "primary_attempts": 216,
+      "control_attempts": 36,
+      "browser_attempts": 81,
+      "api_attempts": 171,
+      "narrative_review_records": 36,
+      "run_window_utc": {
+        "start": "2026-09-19T03:35:13.887Z",
+        "finish": "2026-09-19T03:56:15.466Z"
+      },
+      "model_ids": [
+        "qwen3-8b",
+        "llama3.1-8b",
+        "gemma3-4b"
+      ],
+      "final_audit_inventory": [
+        {
+          "record": "verification.json",
+          "sha256": "8bb211ad04e4723e29ffdf925c6cba6747663f37579ae4f69479ce67e89d710c"
+        },
+        {
+          "record": "grader-audit.md",
+          "sha256": "0461e0f4d369fff7742ad6f7e3341423439fb469d2295c18f5c42776cc6f18b8"
+        },
+        {
+          "record": "audit-rules.md",
+          "sha256": "6310b90bdcb949cd0d24611eb0269cea4063a28caa28cd131a3b87d9e6904d05"
+        }
+      ]
+    },
+    {
+      "campaign_id": "transportation-gpt-benchmark-2026-09-23",
+      "campaign_label": "2026-09-23 / Production site",
+      "local_date": "2026-09-23",
+      "execution_path": "Production site",
+      "manifest_sha256": "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb",
+      "summary_sha256": "5d3f1255ad524f36df40050cff38e44aa873aca73454fe4b4440f9bb0d146d22",
+      "summary_complete": true,
+      "verification_passed": true,
+      "scheduled_application_attempts": 252,
+      "primary_attempts": 216,
+      "control_attempts": 36,
+      "browser_attempts": 81,
+      "api_attempts": 171,
+      "narrative_review_records": 36,
+      "run_window_utc": {
+        "start": "2026-09-24T01:46:05.455Z",
+        "finish": "2026-09-24T02:00:40.924Z"
+      },
+      "model_ids": [
+        "openai-gpt-4.1-mini",
+        "openai-gpt-5.4-mini",
+        "openai-gpt-5.4"
+      ],
+      "final_audit_inventory": [
+        {
+          "record": "verification.json",
+          "sha256": "e4e69f9524acd3f1bf7e9e6f234eef94817ecf031ddc481d0ed75f45addc7697"
+        },
+        {
+          "record": "audit-rules.md",
+          "sha256": "6310b90bdcb949cd0d24611eb0269cea4063a28caa28cd131a3b87d9e6904d05"
+        }
+      ]
+    },
+    {
+      "campaign_id": "local-model-benchmark-2026-09-24",
+      "campaign_label": "2026-09-24 / Production site",
+      "local_date": "2026-09-24",
+      "execution_path": "Production site",
+      "manifest_sha256": "a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814",
+      "summary_sha256": "cfac5c01dfa2e837170dd153ac457326e54d5090182bb729e6e9c0f61118d99c",
+      "summary_complete": true,
+      "verification_passed": true,
+      "scheduled_application_attempts": 168,
+      "primary_attempts": 144,
+      "control_attempts": 24,
+      "browser_attempts": 54,
+      "api_attempts": 114,
+      "narrative_review_records": 24,
+      "run_window_utc": {
+        "start": "2026-09-24T20:30:09.941Z",
+        "finish": "2026-09-24T20:46:23.774Z"
+      },
+      "model_ids": [
+        "qwen3-14b",
+        "gemma4-12b"
+      ],
+      "final_audit_inventory": [
+        {
+          "record": "verification.json",
+          "sha256": "3cb9b0ae895f6227ee29acb9ac8ace9f7653d743343b3fe04f2a6cc8fcd47555"
+        },
+        {
+          "record": "audit-rules.md",
+          "sha256": "6310b90bdcb949cd0d24611eb0269cea4063a28caa28cd131a3b87d9e6904d05"
+        },
+        {
+          "record": "grader-parity.json",
+          "sha256": "6926a0bc019d7bea966efd8cf113532df3992427d60c2dee6b1a3191cd47a29e"
+        },
+        {
+          "record": "review-method.md",
+          "sha256": "1f35f4c1c269353692818aaa698b2b45f8edad113cfbdd7fec79d6984e7f7d86"
+        },
+        {
+          "record": "review-correction.json",
+          "sha256": "e9ffd276242a381ee08b2b2467000ed295769e709cc88e1fa28559b18b4d562e"
+        },
+        {
+          "record": "deployment-provenance.json",
+          "sha256": "f8f22c15b8427a2e67bc20d37f7e6fb0ed165fd1df0d64c0e8bcc7ad89539348"
+        }
+      ]
+    },
+    {
+      "campaign_id": "qwen-newer-benchmark-2026-09-29",
+      "campaign_label": "2026-09-29 / Paired local",
+      "local_date": "2026-09-29",
+      "execution_path": "Paired local",
+      "manifest_sha256": "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863",
+      "summary_sha256": "c5b2365345777b3e8e72ea9847272453a94d6a3a6bd16b2e8964b64ee48ed5a4",
+      "summary_complete": true,
+      "verification_passed": true,
+      "scheduled_application_attempts": 168,
+      "primary_attempts": 144,
+      "control_attempts": 24,
+      "browser_attempts": 54,
+      "api_attempts": 114,
+      "narrative_review_records": 24,
+      "run_window_utc": {
+        "start": "2026-09-29T14:17:05.362Z",
+        "finish": "2026-09-29T14:50:59.626Z"
+      },
+      "model_ids": [
+        "qwen3-14b",
+        "qwen3.8-27b"
+      ],
+      "final_audit_inventory": [
+        {
+          "record": "verification.json",
+          "sha256": "9013a9e85fc39077b36d5bea3086f1d7c888a5f4e5a02017d44eb79106a82206"
+        },
+        {
+          "record": "grader-parity.json",
+          "sha256": "56591a954d0565f92c03877ef9f9ea5b92d28b55c9ebe5da89345546a0564095"
+        },
+        {
+          "record": "review-method.md",
+          "sha256": "521f4f3a4866dc4dfb4473ce9c53444333031bc4bc538b0b0c25af543d1d6ef5"
+        },
+        {
+          "record": "failure-audit.md",
+          "sha256": "f26843fd254496b2fac6b629ffe40f14aa4bc4d68df63500ff3342ceb78bb5b1"
+        },
+        {
+          "record": "runtime-default-audit.md",
+          "sha256": "d1b9401d4ce4ade4f972a72cf57198f09f6ba151ee4f4d50492d98d7bf4509da"
+        },
+        {
+          "record": "oracle-parity.json",
+          "sha256": "6b6fd32f942a76421f0046d3d6687a73dafa6be60e2fc625a7edbd5ac19b3adb"
+        },
+        {
+          "record": "structural-failure-audit.json",
+          "sha256": "49bfacd94cb592f32392f9edfab960883fab67122d0eb8d5ce5927b5ab09633b"
+        }
+      ]
+    },
+    {
+      "campaign_id": "gpt61-sol-benchmark-2026-09-29",
+      "campaign_label": "September 29 API extension",
+      "local_date": "2026-09-29",
+      "execution_path": "Frozen local app / API",
+      "manifest_sha256": "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77",
+      "summary_sha256": "57a2d7ba58c9a300b479a6e30b76cf46e573fb2af9b426c5682dece191d417aa",
+      "summary_complete": true,
+      "verification_passed": true,
+      "scheduled_application_attempts": 84,
+      "primary_attempts": 72,
+      "control_attempts": 12,
+      "browser_attempts": 27,
+      "api_attempts": 57,
+      "narrative_review_records": 12,
+      "run_window_utc": {
+        "start": "2026-09-29T23:50:47.241Z",
+        "finish": "2026-09-29T23:58:05.681Z"
+      },
+      "model_ids": [
+        "openai-gpt-6.1-sol"
+      ],
+      "final_audit_inventory": [
+        {
+          "record": "verification.json",
+          "sha256": "7099df1400a7baa2c7cb0053d8bdea0b6cd5fbb95d934a3d58269027ca37a04b"
+        },
+        {
+          "record": "grader-parity.json",
+          "sha256": "823017bb7e4752b41e698eb6a54d5abe613f51d6145a036e63d284fae9e34020"
+        },
+        {
+          "record": "review-method.md",
+          "sha256": "3dc6ab00af15c3d5028a9bd6105a2d02861f2dfafd1f54df9871d4f56666f6d8"
+        },
+        {
+          "record": "oracle-parity.json",
+          "sha256": "902a1f7ac61418eedbfbb61fa30abf08a1c68c553b7577dfa19a1a7a01623529"
+        },
+        {
+          "record": "application-parity.json",
+          "sha256": "ba23dac6b21dfcf78e388125bceff4dff45f2ddf3d3b13d47c430ef778c769f5"
+        },
+        {
+          "record": "freeze-receipt.json",
+          "sha256": "7f640a4f105075cc0c7a73cc21e688c04a8f1dfee4df3db883edd87ed45f5ada"
+        },
+        {
+          "record": "model-resolution.json",
+          "sha256": "4873ff58e5e09f7936dfefd7a9e1c9d6077c59046427dc98b641d912a45d6117"
+        },
+        {
+          "record": "structural-failure-audit.json",
+          "sha256": "43f1743678cbfcf3c694b89fbc4f3f5400df04783ae5bbf7e350eaaf89a0219f"
+        }
+      ]
+    }
+  ],
+  "aggregate_counts": {
+    "campaigns": 5,
+    "configuration_campaign_observations": 11,
+    "unique_configurations": 10,
+    "scheduled_application_attempts": 924,
+    "primary_attempts": 792,
+    "control_attempts": 132,
+    "browser_attempts": 297,
+    "api_attempts": 627,
+    "narrative_review_records": 132
+  },
+  "tested_model_artifacts": [
+    {
+      "model_id": "qwen3-8b",
+      "configuration": "Qwen3 8B",
+      "campaign_local_dates": [
+        "2026-09-18"
+      ],
+      "campaign_ids": [
+        "transportation-model-benchmark-2026-09-18"
+      ],
+      "campaign_manifest_sha256": [
+        "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e"
+      ],
+      "engine": "Transformers",
+      "repository": "Qwen/Qwen3-8B",
+      "recorded_snapshot_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "precision": "BF16",
+      "package_manifest_digest_sha256": null,
+      "identity_note": "Recorded source snapshot revision, not an Ollama package digest."
+    },
+    {
+      "model_id": "llama3.1-8b",
+      "configuration": "Llama 3.1 8B",
+      "campaign_local_dates": [
+        "2026-09-18"
+      ],
+      "campaign_ids": [
+        "transportation-model-benchmark-2026-09-18"
+      ],
+      "campaign_manifest_sha256": [
+        "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e"
+      ],
+      "engine": "Ollama",
+      "tested_tag": "llama3.1:8b",
+      "package_manifest_digest_sha256": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e",
+      "reported_parameter_size": "8.0B",
+      "quantization": "Q4_K_M"
+    },
+    {
+      "model_id": "gemma3-4b",
+      "configuration": "Gemma 3 4B",
+      "campaign_local_dates": [
+        "2026-09-18"
+      ],
+      "campaign_ids": [
+        "transportation-model-benchmark-2026-09-18"
+      ],
+      "campaign_manifest_sha256": [
+        "a73f5b9e835ec7765beae747d9c3df04b63a7c60d1b660233deaef0af830b80e"
+      ],
+      "engine": "Ollama",
+      "tested_tag": "gemma3:4b",
+      "package_manifest_digest_sha256": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "reported_parameter_size": "4.3B",
+      "quantization": "Q4_K_M"
+    },
+    {
+      "model_id": "openai-gpt-4.1-mini",
+      "configuration": "GPT-4.1 mini",
+      "campaign_local_dates": [
+        "2026-09-23"
+      ],
+      "campaign_ids": [
+        "transportation-gpt-benchmark-2026-09-23"
+      ],
+      "campaign_manifest_sha256": [
+        "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb"
+      ],
+      "engine": "OpenAI Responses API",
+      "tested_alias": "gpt-4.1-mini",
+      "package_manifest_digest_sha256": null,
+      "identity_note": "Provider alias; no immutable weight snapshot or package digest was recorded."
+    },
+    {
+      "model_id": "openai-gpt-5.4-mini",
+      "configuration": "GPT-5.4 mini",
+      "campaign_local_dates": [
+        "2026-09-23"
+      ],
+      "campaign_ids": [
+        "transportation-gpt-benchmark-2026-09-23"
+      ],
+      "campaign_manifest_sha256": [
+        "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb"
+      ],
+      "engine": "OpenAI Responses API",
+      "tested_alias": "gpt-5.4-mini",
+      "package_manifest_digest_sha256": null,
+      "identity_note": "Provider alias; no immutable weight snapshot or package digest was recorded."
+    },
+    {
+      "model_id": "openai-gpt-5.4",
+      "configuration": "GPT-5.4",
+      "campaign_local_dates": [
+        "2026-09-23"
+      ],
+      "campaign_ids": [
+        "transportation-gpt-benchmark-2026-09-23"
+      ],
+      "campaign_manifest_sha256": [
+        "9239d992da1869f98116f87cb5e708f6414d15dfc588d517e1478c114c708deb"
+      ],
+      "engine": "OpenAI Responses API",
+      "tested_alias": "gpt-5.4",
+      "package_manifest_digest_sha256": null,
+      "identity_note": "Provider alias; no immutable weight snapshot or package digest was recorded."
+    },
+    {
+      "model_id": "qwen3-14b",
+      "configuration": "Qwen3 14B",
+      "campaign_local_dates": [
+        "2026-09-24",
+        "2026-09-29"
+      ],
+      "campaign_ids": [
+        "local-model-benchmark-2026-09-24",
+        "qwen-newer-benchmark-2026-09-29"
+      ],
+      "campaign_manifest_sha256": [
+        "a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814",
+        "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863"
+      ],
+      "engine": "Ollama",
+      "tested_tag": "qwen3:14b",
+      "package_manifest_digest_sha256": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "reported_parameter_size": "14.8B",
+      "quantization": "Q4_K_M"
+    },
+    {
+      "model_id": "gemma4-12b",
+      "configuration": "Gemma 4 12B",
+      "campaign_local_dates": [
+        "2026-09-24"
+      ],
+      "campaign_ids": [
+        "local-model-benchmark-2026-09-24"
+      ],
+      "campaign_manifest_sha256": [
+        "a2fb59169c45f21572d7d33fcac909a118271b6f7c35286b98812a2502ecb814"
+      ],
+      "engine": "Ollama",
+      "tested_tag": "gemma4:12b",
+      "package_manifest_digest_sha256": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+      "reported_parameter_size": "11.9B",
+      "quantization": "Q4_K_M"
+    },
+    {
+      "model_id": "qwen3.8-27b",
+      "configuration": "Qwen3.8 27B Q4_K_M",
+      "campaign_local_dates": [
+        "2026-09-29"
+      ],
+      "campaign_ids": [
+        "qwen-newer-benchmark-2026-09-29"
+      ],
+      "campaign_manifest_sha256": [
+        "a32cb875e9e9b2ac1f48e00fd5905ff5bb9ae0c3f63d770f0fab98a6e5073863"
+      ],
+      "engine": "Ollama",
+      "tested_tag": "qwen3.8:27b-q4_K_M",
+      "package_manifest_digest_sha256": "25b843619e944cd0ae6069f94ff4e5e26a16e109ccbc0a66a0f05979ed70098e",
+      "reported_parameter_size": "27.3B",
+      "quantization": "Q4_K_M"
+    },
+    {
+      "model_id": "openai-gpt-6.1-sol",
+      "configuration": "GPT-6.1 Sol",
+      "campaign_local_dates": [
+        "2026-09-29"
+      ],
+      "campaign_ids": [
+        "gpt61-sol-benchmark-2026-09-29"
+      ],
+      "campaign_manifest_sha256": [
+        "b2777e4a29be6c5516904a81cebbb3e1cd1e27799a9599cb42f0f57924039c77"
+      ],
+      "engine": "OpenAI Responses API",
+      "tested_alias": "gpt-6.1-sol",
+      "package_manifest_digest_sha256": null,
+      "identity_note": "Provider alias; no immutable weight snapshot or package digest was recorded.",
+      "frozen_runtime_settings": {
+        "reasoning_effort": "medium",
+        "combined_reasoning_output_token_budget": 8192,
+        "model_call_timeout_seconds": 60,
+        "store": false,
+        "temperature_parameter": "not supplied",
+        "json_object_planner": true,
+        "provider_endpoint": "https://us.api.openai.com/v1/responses"
+      }
+    }
+  ],
+  "metric_definition": {
+    "ui_state_violations": "Actual UI value changes violating the frozen task policy, among 21 primary browser attempts per observation; redundant unchanged fields are excluded. A requested partial change applied before required clarification can violate this policy.",
+    "csv_historical_field_name": "unintended_ui_mutations",
+    "field_name_note": "The historical CSV key is preserved for traceability; the manuscript reports this metric as UI-state violations, without inferring user harm or claiming that every changed value was unrequested in isolation."
+  },
+  "audit_notes": [
+    "The September 18 written rubric was frozen before inference. Later aggregation enforces its existing identity and browser requirements; original and protocol grades were retained.",
+    "Functional equivalence was a post-hoc diagnostic in the initial campaign and inherited by subsequent campaigns.",
+    "The September 24 final review restored omitted original scoring notes and historical anonymous calibration; 15 of 24 decisions changed without changing answers or oracles. Initial records were retained.",
+    "September 24 deployment provenance corrects an initial v50 lookup to v51/v52 using the same deployment archive and environment revision.",
+    "The September 24 machine-readable source receipt was captured approximately 2.3 seconds after the first attempt; an independent pre-run source audit also exists.",
+    "The September 29 failure audit preserves strict scoring and identifies MD04 grouping ambiguity. Frozen scope-reconciliation code matches 'visible' without negation or exclusion handling and forces viewport for plans reaching that branch, including the MD01 'outside the visible map' question. Raw planner intermediates were not retained, so each model's additional contribution is not isolated; MD01 is not a model-only failure.",
+    "September 29 runtime audit infers speculative decoding was disabled; it was not explicitly configured or measured per trial.",
+    "Narrative assessments are identity-blind, AI-assisted single-reviewer judgments, not human expert validation.",
+    "The September 29 API extension evaluates GPT-6.1 Sol through a frozen local application and regional API route. It is a separate campaign, not a contemporaneous paired comparison with earlier production or local Ollama configurations."
+  ],
+  "generator_sha256": "a16cebcceb8b42a509fc767902076cd1ad5bcc81a36f97fc15d21f026c886adb",
+  "package_inputs_sha256": {
+    "aggregate-results.csv": "8e6ba864b27abb50de88267796b4cb72beb726d6bd493fe725097e00ec288eb2",
+    "paired-summary.json": "dd63687d97ac2b7ce328385b45c8a86cf7d63b48240ec2f26db5821734a48d6d"
+  }
+}

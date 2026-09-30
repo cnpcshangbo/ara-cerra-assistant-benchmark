@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "cerra-public-source-provenance-v1",
+  "sourceSnapshot": "Retained historical CERRA source snapshot used for the frozen task oracles, not current live Maryland totals.",
+  "files": [
+    {
+      "logicalPath": "research-source/mdsp-estimates.sqlite",
+      "sha256": "dd473d9335c47e803846fb9ccc6c23943ee99c1397f14b77abf991e41ea11960"
+    },
+    {
+      "logicalPath": "research-source/mdsp-locations.sqlite",
+      "sha256": "e6276581fba6f5c83df5a4e1a79057714a8799263157b3940ba1643a0313ee99"
+    },
+    {
+      "logicalPath": "research-source/mdsp-map.sqlite",
+      "sha256": "b20a6fba016ee8114fc1730a9ed9fe964c60b51cc521541cc582c55b33175785"
+    },
+    {
+      "logicalPath": "research-source/mdsp-state.sqlite",
+      "sha256": "4b737e2b0ac500be741f8665e5167df82d644534055e8dd271b5cfb1610f0ca6"
+    },
+    {
+      "logicalPath": "research-source/mdsp-weather.sqlite",
+      "sha256": "7718ccb6d302f46a655dd4ae80bbe6986bd80b25878e825722278338f7b4587d"
+    },
+    {
+      "logicalPath": "app/hin-data-audit.json",
+      "sha256": "24627ecc30dce515e6a8e84365e4f03e3e3db9c67105c2606ca6d3fcc67b0a41"
+    },
+    {
+      "logicalPath": "app/hin-fsi-segments.json",
+      "sha256": "ad3c68a0649104b5a5634cf1d0fe6019ab360bdab78f54597d573742f18c860f"
+    },
+    {
+      "logicalPath": "app/hin-intersections.json",
+      "sha256": "a0ebd17f559f7d4ebe5858f7ec6031c9f65eae8865fc83d20d2dd12d423bbe3b"
+    },
+    {
+      "logicalPath": "app/hin-nonmotor-segments.json",
+      "sha256": "20b21a5e9aef153f670ede477c4bb673c55203aef6583f663627f80555fd1aa0"
+    },
+    {
+      "logicalPath": "app/hin-ranked-corridors.json",
+      "sha256": "b058d6959e7571be8f6aea3791a06854e0e29a6c7e80333a66a35f4a070608e9"
+    },
+    {
+      "logicalPath": "app/hin-tracts.json",
+      "sha256": "34f53eb596a158f49e231b93486376ccce51cfe5dd08f186c9070b4dcf0ed905"
+    }
+  ],
+  "marylandOracle": "Nine frozen Maryland reference payloads were replayed before the final extension. Read-only SQL anchors support query counts. This is not an independent audit of original crash-report collection or all upstream transformations.",
+  "hinOracle": "A separate Python pass computed HIN numeric expectations over the six retained JSON exports without importing application queryData, factualAnswer, reconcilePlan or model code. These exports share the application’s upstream extraction.",
+  "documentarySourceLabel": "UMD/BCDOT Draft Final Report · September 2025",
+  "documentaryLabelLimitation": "Historical source label, not an independently verified full report title.",
+  "notDistributed": [
+    "Maryland SQLite snapshots",
+    "person/vehicle/raw report rows",
+    "precise selected-crash record",
+    "complete source GIS/media archive"
+  ],
+  "limitations": [
+    "Source hashes identify bytes but do not independently establish correctness.",
+    "Oracle computational independence is not independent source collection, ETL validation, clinical/causal validity, or validation of HIN methodology.",
+    "Published expected aggregates and source-feature summaries support question/rubric review; reviewers cannot independently reconstruct every original query from this package alone."
+  ]
+}
